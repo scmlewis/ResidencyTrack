@@ -172,7 +172,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       </nav>
 
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden lg:flex flex-col w-64 bg-slate-900/95 text-white border border-slate-700/60 shrink-0 select-none rounded-xl shadow-2xl m-4 backdrop-blur-md lg:sticky lg:top-4 lg:h-[calc(100vh-2rem)] overflow-hidden">
+      <aside className="hidden lg:flex flex-col w-64 bg-slate-900/95 text-white border border-slate-700/60 shrink-0 select-none rounded-xl shadow-2xl backdrop-blur-md fixed top-4 left-4 bottom-4 z-40 overflow-hidden">
         {/* Brand Zone */}
         <div className="p-5 border-b border-slate-800">
           <div className="flex items-center gap-3">
