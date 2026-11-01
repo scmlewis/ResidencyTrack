@@ -128,7 +128,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
@@ -141,7 +141,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
         </div>
 
         {/* Preset quick test buttons */}
-        <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center gap-2">
+        <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex flex-wrap items-center gap-2">
           <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Quick Scenarios:</span>
           <button
             onClick={() => handleApplyPreset(14, 'Spain', '2-Week Mediterranean Holiday')}
@@ -166,7 +166,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Input Parameters Form (1 col) */}
-        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs flex flex-col justify-between transition-colors">
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs flex flex-col justify-between transition-colors">
           <form onSubmit={handleSimulate} className="space-y-4">
             <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <SlidersHorizontal className="w-4 h-4 text-teal-600 dark:text-teal-400" />
@@ -241,7 +241,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
             </button>
           </form>
 
-          <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-400 dark:text-slate-500">
+          <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700 text-[11px] text-slate-400 dark:text-slate-500">
             Simulations are computed strictly in memory. Your saved travel log will not be altered unless you click "Save to Travel Log".
           </div>
         </div>
@@ -249,7 +249,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
         {/* Simulation Impact Results (2 cols) */}
         <div className="lg:col-span-2 space-y-4">
           {simulationResult ? (
-            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-6 shadow-xs space-y-6 transition-colors">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs space-y-6 transition-colors">
               {/* Breach banner or safe banner */}
               {simulationResult.createsThresholdBreach ? (
                 <div className="p-4 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 rounded-xl text-xs text-red-900 dark:text-red-200 flex items-start gap-3">
@@ -358,7 +358,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               <div className="hidden md:block overflow-x-auto">
                 <table className="w-full text-xs text-left">
                   <thead>
-                    <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 font-semibold">
+                    <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 font-semibold">
                       <th className="py-2.5 px-3">Statutory Metric</th>
                       <th className="py-2.5 px-3 text-center">Current Total</th>
                       <th className="py-2.5 px-3 text-center">Simulated Total</th>
@@ -428,7 +428,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               </div>
 
               {/* Actions */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
                 <button
                   type="button"
                   onClick={() => {
@@ -463,7 +463,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               </div>
             </div>
           ) : (
-            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-12 text-center text-xs text-slate-400 dark:text-slate-500 transition-colors">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-12 text-center text-xs text-slate-400 dark:text-slate-500 transition-colors">
               Enter proposed travel dates on the left and click "Run Simulation" to inspect compliance impact.
             </div>
           )}

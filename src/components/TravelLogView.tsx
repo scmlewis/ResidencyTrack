@@ -223,7 +223,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
   return (
     <div className="space-y-4 sm:space-y-6">
       {/* Header and Controls */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4 sm:p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           <div>
             <h1 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Travel Absence Log</h1>
@@ -252,7 +252,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
         </div>
 
         {/* Summary Metric Strip */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 mt-4 pt-3 sm:mt-5 sm:pt-4 border-t border-slate-100 dark:border-slate-800 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 mt-4 pt-3 sm:mt-5 sm:pt-4 border-t border-slate-100 dark:border-slate-700 text-xs">
           <div>
             <span className="text-[11px] text-slate-400 dark:text-slate-500 block">Total Trips</span>
             <span className="text-base sm:text-lg font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
@@ -281,7 +281,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-3 sm:p-4 shadow-xs flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-3 transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-4 shadow-xs flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-3 transition-colors">
         {/* Search */}
         <div className="relative w-full md:w-72">
           <Search className="w-3.5 h-3.5 absolute left-3 top-3 text-slate-400" />
@@ -345,7 +345,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
       </div>
 
       {/* Trips Content: Dedicated Mobile Cards + Desktop Table */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-xs overflow-hidden transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 shadow-xs overflow-hidden transition-colors">
         {/* Mobile Card List View (md:hidden) */}
         <div className="md:hidden divide-y divide-slate-100 dark:divide-slate-800">
           {filteredRecords.length > 0 ? (
@@ -425,7 +425,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
 
                   {/* Validation issues */}
                   {hasIssues && (
-                    <div className="mt-1 space-y-1 pt-1 border-t border-slate-100 dark:border-slate-800">
+                    <div className="mt-1 space-y-1 pt-1 border-t border-slate-100 dark:border-slate-700">
                       {trip.validationIssues.map((issue, idx) => (
                         <div
                           key={idx}
@@ -455,7 +455,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
         <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 font-semibold">
+              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 font-semibold">
                 <th className="py-3 px-4">Dates & Duration</th>
                 <th className="py-3 px-4">Destination & Purpose</th>
                 <th className="py-3 px-4 text-center">Counting Breakdown</th>
@@ -598,8 +598,8 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
       {/* Add / Edit Trip Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs overflow-y-auto">
-          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 w-full max-w-md overflow-hidden my-8 transition-colors">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/70">
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-md overflow-hidden my-8 transition-colors">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/70">
               <h2 className="text-base font-bold text-slate-900 dark:text-slate-100">
                 {editingTrip ? 'Edit Overseas Trip' : 'Log Overseas Trip'}
               </h2>
@@ -715,7 +715,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
                 </div>
               )}
 
-              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-200 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-200 dark:border-slate-700">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
@@ -738,7 +738,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
       {/* Delete Confirmation Dialog */}
       {deleteConfirmId && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 p-6 max-w-sm w-full space-y-4 transition-colors">
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
             <div className="flex items-center gap-3 text-red-600 dark:text-red-400">
               <div className="p-2 bg-red-100 dark:bg-red-950/60 rounded-lg">
                 <Trash2 className="w-5 h-5 text-red-600 dark:text-red-400" />

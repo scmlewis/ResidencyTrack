@@ -56,9 +56,9 @@ export const ImmigrationProfileModal: React.FC<ImmigrationProfileModalProps> = (
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs overflow-y-auto">
-      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden my-8 transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-lg overflow-hidden my-8 transition-colors">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/70">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/70">
           <div>
             <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Immigration Profile</h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -189,7 +189,7 @@ export const ImmigrationProfileModal: React.FC<ImmigrationProfileModalProps> = (
           </div>
 
           {/* Actions */}
-          <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-200 dark:border-slate-800">
+          <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-200 dark:border-slate-700">
             <button
               type="button"
               onClick={onClose}

@@ -111,7 +111,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Header and Route Tabs */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
@@ -152,8 +152,8 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
         /* ILR CONTINUOUS RESIDENCE SECTION */
         <div className="space-y-4 sm:space-y-6">
           {/* Main Peak Window Evaluation Card */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-4 sm:p-6 shadow-xs transition-colors">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 sm:pb-6 border-b border-slate-100 dark:border-slate-800">
+          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-6 shadow-xs transition-colors">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 sm:pb-6 border-b border-slate-100 dark:border-slate-700">
               <div>
                 <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold tracking-wider mb-0.5">
                   Appendix Continuous Residence CR 2.2
@@ -222,7 +222,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
 
             {/* Contributing Trips to Peak Window */}
             {ilrResult.peakWindow && ilrResult.peakWindow.tripsInWindow.length > 0 && (
-              <div className="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-slate-100 dark:border-slate-800">
+              <div className="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-slate-100 dark:border-slate-700">
                 <h3 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3">
                   Trips Contributing to Peak 12-Month Window ({ilrResult.peakWindow.tripsInWindow.length})
                 </h3>
@@ -230,7 +230,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 {/* Mobile View */}
                 <div className="md:hidden space-y-2">
                   {ilrResult.peakWindow.tripsInWindow.map((t, i) => (
-                    <div key={i} className="p-2.5 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 text-xs flex items-center justify-between">
+                    <div key={i} className="p-2.5 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/40 text-xs flex items-center justify-between">
                       <div>
                         <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
                           <MapPin className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
@@ -251,7 +251,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 <div className="hidden md:block overflow-x-auto">
                   <table className="w-full text-xs text-left">
                     <thead>
-                      <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 font-semibold">
+                      <tr className="border-b border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-semibold">
                         <th className="pb-2">Destination</th>
                         <th className="pb-2">Trip Dates</th>
                         <th className="pb-2 text-right">Days within this 12M Window</th>
@@ -306,7 +306,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* 5-Year Requirement */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-6 shadow-xs flex flex-col justify-between transition-colors">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs flex flex-col justify-between transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold">
@@ -349,14 +349,14 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700 text-[11px] text-slate-500 dark:text-slate-400">
                 Qualifying Window: {formatDisplayDate(natResult.fiveYearPeriodStart)} to{' '}
                 {formatDisplayDate(natResult.fiveYearPeriodEnd)}
               </div>
             </div>
 
             {/* Final 12 Months Requirement */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-6 shadow-xs flex flex-col justify-between transition-colors">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs flex flex-col justify-between transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold">
@@ -399,7 +399,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700 text-[11px] text-slate-500 dark:text-slate-400">
                 Final Year Window: {formatDisplayDate(natResult.final12MonthsStart)} to{' '}
                 {formatDisplayDate(natResult.final12MonthsEnd)}
               </div>
@@ -407,7 +407,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
           </div>
 
           {/* Physical Presence on Day 1 Check Card */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs transition-colors">
+          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
             <div className="flex items-start gap-3">
               <div
                 className={`p-2 rounded-lg shrink-0 ${
@@ -451,7 +451,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
 
           {/* Year-by-Year Breakdown */}
           {yearlyBreakdown.length > 0 && (
-            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs transition-colors">
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
               <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-3">
                 Year-by-Year Absence Breakdown
               </h3>

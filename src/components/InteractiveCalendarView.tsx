@@ -140,7 +140,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
   return (
     <div className="space-y-6">
       {/* Header and Controls */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Interactive Calendar</h1>
@@ -193,7 +193,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
         </div>
 
         {/* Legend */}
-        <div className="flex flex-wrap items-center gap-4 text-xs mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+        <div className="flex flex-wrap items-center gap-4 text-xs mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-3 rounded-xs bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700" />
             <span className="text-slate-600 dark:text-slate-400">UK Presence</span>
@@ -224,7 +224,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
       {/* Calendar Grid + Inspector Split */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Calendar Grid (2 cols) */}
-        <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs transition-colors">
+        <div className="lg:col-span-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
           <div className="grid grid-cols-7 gap-1 text-center font-semibold text-xs text-slate-400 dark:text-slate-500 mb-2">
             <div>Mon</div>
             <div>Tue</div>
@@ -291,9 +291,9 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
         </div>
 
         {/* Selected Date Inspector (1 col) */}
-        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs flex flex-col justify-between transition-colors">
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs flex flex-col justify-between transition-colors">
           <div>
-            <div className="flex items-center gap-2 pb-3 mb-4 border-b border-slate-100 dark:border-slate-800">
+            <div className="flex items-center gap-2 pb-3 mb-4 border-b border-slate-100 dark:border-slate-700">
               <CalendarIcon className="w-4 h-4 text-teal-600 dark:text-teal-400" />
               <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100">
                 {selectedDate ? formatDisplayDate(selectedDate, { fullMonth: true, showDayOfWeek: true }) : 'Select a date'}
@@ -371,7 +371,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
             )}
           </div>
 
-          <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-400 dark:text-slate-500">
+          <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700 text-[11px] text-slate-400 dark:text-slate-500">
             Navigation tip: Select a month & year from the dropdown above to view past or future periods.
           </div>
         </div>

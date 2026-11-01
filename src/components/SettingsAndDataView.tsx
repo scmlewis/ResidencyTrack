@@ -264,7 +264,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
           Settings, Data Management & Policy Rules
         </h1>
@@ -301,7 +301,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
       {/* Storage and Backup Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Card 1: Data Backup & Restore */}
-        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs space-y-4 transition-colors">
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs space-y-4 transition-colors">
           <div className="flex items-center gap-2">
             <Database className="w-4 h-4 text-teal-600 dark:text-teal-400" />
             <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100">Backup & Data Portability</h2>
@@ -341,7 +341,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
         </div>
 
         {/* Card 2: Demo Reset and Clear */}
-        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs space-y-4 transition-colors">
+        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs space-y-4 transition-colors">
           <div className="flex items-center gap-2">
             <RotateCcw className="w-4 h-4 text-amber-600 dark:text-amber-400" />
             <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100">Demo Data & Record Reset</h2>
@@ -371,7 +371,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
       </div>
 
       {/* Official Policy Rules Reference Table */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs space-y-4 transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs space-y-4 transition-colors">
         <div>
           <h2 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
@@ -385,7 +385,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
             <thead>
-              <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 font-semibold">
+              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 font-semibold">
                 <th className="py-2.5 px-3">Rule & Category</th>
                 <th className="py-2.5 px-3">Threshold</th>
                 <th className="py-2.5 px-3">Counting Method</th>
@@ -430,7 +430,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
       </div>
 
       {/* Live Calculation Engine Test Runner */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs space-y-4 transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs space-y-4 transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
@@ -456,7 +456,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <span>All 14 statutory PRD calculation tests executed successfully! (100% Passed)</span>
             </div>
-            <div className="border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden divide-y divide-slate-100 dark:divide-slate-800 text-xs">
+            <div className="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden divide-y divide-slate-100 dark:divide-slate-800 text-xs">
               {testResults.map((t) => (
                 <div key={t.id} className="p-2.5 flex items-center justify-between bg-white dark:bg-slate-800/60 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                   <div>
@@ -475,7 +475,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
             </div>
           </div>
         ) : (
-          <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-dashed border-slate-200 dark:border-slate-800 rounded-lg text-xs text-slate-500 dark:text-slate-400 text-center">
+          <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-dashed border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-500 dark:text-slate-400 text-center">
             Click "Run Calculation Tests" to execute the PRD compliance test cases live.
           </div>
         )}
@@ -484,7 +484,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
       {/* Confirmation Modals */}
       {confirmDemoOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 p-6 max-w-sm w-full space-y-4 transition-colors">
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
             <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Reset to Sample Data?</h3>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               This will overwrite your existing records with the realistic BN(O) visa sample travel history. Any unexported data will be replaced.
@@ -509,7 +509,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
 
       {confirmClearOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 p-6 max-w-sm w-full space-y-4 transition-colors">
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
             <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Clear All Personal Data?</h3>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               This will permanently delete all travel records and reset your immigration profile in this browser.

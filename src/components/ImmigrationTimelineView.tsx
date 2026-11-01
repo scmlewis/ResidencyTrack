@@ -49,7 +49,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Immigration Timeline</h1>
@@ -66,7 +66,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
         </div>
 
         {/* Legend */}
-        <div className="flex flex-wrap items-center gap-4 text-xs mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+        <div className="flex flex-wrap items-center gap-4 text-xs mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
             <span className="text-slate-600 dark:text-slate-400">Confirmed Legal Date</span>
@@ -83,8 +83,8 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
       </div>
 
       {/* Timeline Journey Card */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-6 shadow-xs transition-colors">
-        <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-6 space-y-8 py-2">
+      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs transition-colors">
+        <div className="relative border-l-2 border-slate-200 dark:border-slate-700 ml-4 md:ml-6 space-y-8 py-2">
           {milestones.map((milestone, idx) => {
             const isCompleted = milestone.completed;
 
@@ -92,7 +92,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
               <div key={milestone.id} className="relative pl-6 md:pl-8">
                 {/* Node marker */}
                 <div
-                  className={`absolute -left-[17px] top-1.5 w-8 h-8 rounded-full flex items-center justify-center border-2 bg-white dark:bg-slate-900 transition-colors ${
+                  className={`absolute -left-[17px] top-1.5 w-8 h-8 rounded-full flex items-center justify-center border-2 bg-white dark:bg-slate-800 transition-colors ${
                     isCompleted
                       ? 'border-emerald-500 text-emerald-600 dark:text-emerald-400'
                       : milestone.type === 'earliest_ilr_application'

@@ -68,7 +68,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   return (
     <>
       {/* Mobile Top Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 py-2.5 bg-slate-900/90 backdrop-blur-md text-white border-b border-slate-700/60 shadow-2xl transition-colors">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 py-2.5 bg-slate-800/90 backdrop-blur-md text-white border-b border-slate-700/60 shadow-2xl transition-colors">
         <div className="flex items-center gap-2.5">
           <div className="w-7 h-7 rounded-lg bg-teal-600/30 border border-teal-500/40 flex items-center justify-center text-teal-300 font-bold text-xs tracking-wider">
             RT
@@ -108,7 +108,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       {/* Mobile Drawer Menu (Full List of Views) */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 top-[49px] bg-slate-950/70 backdrop-blur-sm z-50 flex flex-col">
-          <div className="bg-slate-900 p-4 border-b border-slate-800 shadow-2xl space-y-1">
+          <div className="bg-slate-800 p-4 border-b border-slate-700 shadow-2xl space-y-1">
             <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider px-3 pb-1">
               All Sections
             </div>
@@ -136,7 +136,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       )}
 
       {/* Mobile Bottom Thumb Navigation Bar */}
-      <nav aria-label="Mobile Navigation" className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-900/90 backdrop-blur-md border-t border-slate-700/60 shadow-2xl py-1 px-2 flex justify-around items-center">
+      <nav aria-label="Mobile Navigation" className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-800/90 backdrop-blur-md border-t border-slate-700/60 shadow-2xl py-1 px-2 flex justify-around items-center">
         {[
           { id: 'dashboard' as NavTab, label: 'Overview', icon: LayoutDashboard },
           { id: 'travel_log' as NavTab, label: 'Trips', icon: PlaneTakeoff },
@@ -172,9 +172,9 @@ export const Navigation: React.FC<NavigationProps> = ({
       </nav>
 
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden lg:flex flex-col w-64 bg-slate-900/95 text-white border-r border-slate-700/60 shrink-0 select-none backdrop-blur-md fixed top-0 left-0 bottom-0 z-40 overflow-hidden shadow-2xl">
+      <aside className="hidden lg:flex flex-col w-64 bg-slate-800/95 text-white border-r border-slate-700/60 shrink-0 select-none backdrop-blur-md fixed top-0 left-0 bottom-0 z-40 overflow-hidden shadow-2xl">
         {/* Brand Zone */}
-        <div className="p-5 border-b border-slate-800">
+        <div className="p-5 border-b border-slate-700">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-[#173B57] font-extrabold text-base shadow-sm">
               RT
@@ -239,7 +239,7 @@ export const Navigation: React.FC<NavigationProps> = ({
         </nav>
 
         {/* Bottom Profile & Verification Disclaimer */}
-        <div className="p-4 border-t border-slate-700/70 bg-slate-900/40 text-xs text-slate-400 space-y-3">
+        <div className="p-4 border-t border-slate-700/70 bg-slate-800/40 text-xs text-slate-400 space-y-3">
           {onToggleTheme && (
             <button
               onClick={onToggleTheme}
