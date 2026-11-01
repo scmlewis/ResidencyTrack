@@ -249,6 +249,18 @@ export const App: React.FC = () => {
           )}
           {currentTab === 'tutorial' && <TutorialView />}
           {currentTab === 'about' && <AboutView />}
+          {currentTab === 'profile' && (
+            <ImmigrationProfileModal
+              isOpen={true}
+              fullPage
+              profile={profile}
+              onSave={(updated) => {
+                setProfile(updated);
+                localStorage.setItem('residencytrack_profile', JSON.stringify(updated));
+              }}
+              onClose={() => setCurrentTab('dashboard')}
+            />
+          )}
         </main>
       </div>
 

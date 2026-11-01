@@ -7,18 +7,20 @@ interface ImmigrationProfileModalProps {
   onClose: () => void;
   profile: ImmigrationProfile;
   onSave: (updated: ImmigrationProfile) => void;
+  fullPage?: boolean;
 }
 
 export const ImmigrationProfileModal: React.FC<ImmigrationProfileModalProps> = ({
   isOpen,
   onClose,
   profile,
-  onSave
-}) => {
+  onSave,
+    fullPage = false
+  }) => {
   const [formData, setFormData] = useState<ImmigrationProfile>(profile);
   const [error, setError] = useState<string | null>(null);
 
-  if (!isOpen) return null;
+if (!isOpen && !fullPage) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

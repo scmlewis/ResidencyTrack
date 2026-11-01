@@ -27,7 +27,8 @@ export type NavTab =
   | 'simulator'
   | 'settings'
   | 'tutorial'
-  | 'about';
+  | 'about'
+  | 'profile';
 
 interface NavigationProps {
   currentTab: NavTab;
@@ -90,7 +91,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             </button>
           )}
           <button
-            onClick={onOpenProfile}
+            onClick={() => onTabChange('profile')}
             className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-teal-300 bg-teal-950/60 border border-teal-800/60 rounded-lg hover:bg-teal-900/40 transition-colors"
           >
             <span>Profile</span>
