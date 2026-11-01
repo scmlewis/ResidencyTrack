@@ -247,7 +247,7 @@ export const App: React.FC = () => {
               profile={profile}
               onSave={(updated) => {
                 setProfile(updated);
-                localStorage.setItem('residencytrack_profile', JSON.stringify(updated));
+                saveStoredProfile(updated);
               }}
               onClose={() => setCurrentTab('dashboard')}
             />

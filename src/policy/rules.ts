@@ -13,7 +13,7 @@ export const OFFICIAL_POLICY_RULES: PolicyRule[] = [
     sourceUrl: 'https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-continuous-residence',
     sourceTitle: 'Immigration Rules: Appendix Continuous Residence (CR 2.1 & CR 2.2)',
     lastVerifiedAt: '2026-10-15',
-    status: 'verified',
+    status: 'POLICY_VERIFICATION_REQUIRED',
     description: 'An applicant must not have been absent from the UK for more than 180 days in any 12-month period during the qualifying period. Only whole days spent outside the UK are counted as absences; departure and arrival days in the UK are not counted as absence days.'
   },
   {
@@ -28,7 +28,7 @@ export const OFFICIAL_POLICY_RULES: PolicyRule[] = [
     sourceUrl: 'https://www.gov.uk/british-national-overseas-bno-visa/settle-in-the-uk',
     sourceTitle: 'Settle in the UK: British National (Overseas) visa',
     lastVerifiedAt: '2026-10-15',
-    status: 'verified',
+    status: 'POLICY_VERIFICATION_REQUIRED',
     description: 'BNO visa holders can apply for Indefinite Leave to Remain (ILR) after 5 continuous years living in the UK, provided continuous residence conditions are satisfied.'
   },
   {
@@ -43,7 +43,7 @@ export const OFFICIAL_POLICY_RULES: PolicyRule[] = [
     sourceUrl: 'https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-continuous-residence',
     sourceTitle: 'Home Office Continuous Residence Guidance',
     lastVerifiedAt: '2026-10-15',
-    status: 'verified',
+    status: 'POLICY_VERIFICATION_REQUIRED',
     description: 'The earliest an applicant can submit an application for settlement is 28 days before completing the 5-year qualifying continuous residence period. Applying earlier can lead to refusal.'
   },
   {
@@ -58,7 +58,7 @@ export const OFFICIAL_POLICY_RULES: PolicyRule[] = [
     sourceUrl: 'https://www.gov.uk/government/publications/form-an-guidance/form-an-guidance-accessible',
     sourceTitle: 'Form AN Guidance: Naturalisation as a British Citizen (Section 6(1))',
     lastVerifiedAt: '2026-10-15',
-    status: 'verified',
+    status: 'POLICY_VERIFICATION_REQUIRED',
     description: 'Under section 6(1) of the British Nationality Act 1981, total absences across the 5-year qualifying period should not exceed 450 days. The applicant must have been physically present in the UK on the day exactly 5 years before the application date.'
   },
   {
@@ -73,7 +73,7 @@ export const OFFICIAL_POLICY_RULES: PolicyRule[] = [
     sourceUrl: 'https://www.gov.uk/government/publications/form-an-guidance/form-an-guidance-accessible',
     sourceTitle: 'Form AN Guidance: Final 12 Months Residence Requirement',
     lastVerifiedAt: '2026-10-15',
-    status: 'verified',
+    status: 'POLICY_VERIFICATION_REQUIRED',
     description: 'Absence from the UK during the 12 months immediately preceding the citizenship application date must not exceed 90 days. Departure and return days are excluded.'
   },
   {
@@ -88,7 +88,7 @@ export const OFFICIAL_POLICY_RULES: PolicyRule[] = [
     sourceUrl: 'https://www.legislation.gov.uk/ukpga/1981/61/contents',
     sourceTitle: 'British Nationality Act 1981: Schedule 1',
     lastVerifiedAt: '2026-10-15',
-    status: 'verified',
+    status: 'POLICY_VERIFICATION_REQUIRED',
     description: 'Non-spouse applicants for British naturalisation must have held Indefinite Leave to Remain (settled status) for at least 12 full calendar months before applying for British citizenship.'
   }
 ];

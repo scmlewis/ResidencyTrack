@@ -51,7 +51,7 @@ export interface PolicyRule {
   sourceUrl: string;
   sourceTitle: string;
   lastVerifiedAt: string;
-  status: 'verified' | 'under_review' | 'superseded';
+  status: 'verified' | 'under_review' | 'superseded' | 'POLICY_VERIFICATION_REQUIRED';
   description: string;
 }
 

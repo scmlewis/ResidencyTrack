@@ -155,7 +155,25 @@ export const DEFAULT_DEMO_RECORDS: TravelRecord[] = [
   }
 ];
 
+export function migrateLegacyStorageKeys(): void {
+  try {
+    const legacyProfile = localStorage.getItem('residencytrack_profile');
+    if (legacyProfile && !localStorage.getItem(STORAGE_KEYS.PROFILE)) {
+      localStorage.setItem(STORAGE_KEYS.PROFILE, legacyProfile);
+      localStorage.removeItem('residencytrack_profile');
+    }
+    const legacyRecords = localStorage.getItem('residencytrack_records');
+    if (legacyRecords && !localStorage.getItem(STORAGE_KEYS.RECORDS)) {
+      localStorage.setItem(STORAGE_KEYS.RECORDS, legacyRecords);
+      localStorage.removeItem('residencytrack_records');
+    }
+  } catch (err) {
+    console.error('Failed to migrate legacy storage keys', err);
+  }
+}
+
 export function getStoredProfile(): ImmigrationProfile {
+  migrateLegacyStorageKeys();
   try {
     const raw = localStorage.getItem(STORAGE_KEYS.PROFILE);
     if (raw) {
@@ -168,8 +186,21 @@ export function getStoredProfile(): ImmigrationProfile {
   } catch (err) {
     console.error('Failed to load profile from localStorage', err);
   }
-  saveStoredProfile(DEFAULT_DEMO_PROFILE);
-  return DEFAULT_DEMO_PROFILE;
+  const blankProfile: ImmigrationProfile = {
+    id: 'profile_' + Date.now(),
+    visaRoute: 'BNO',
+    visaGrantDate: null,
+    firstUKArrivalDate: null,
+    qualifyingPeriodStartDate: null,
+    qualifyingPeriodStartConfirmed: false,
+    travelHistoryCompleteness: 'NOT_CONFIRMED',
+    actualILRGrantDate: null,
+    naturalisationRoute: 'standard_5_year',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+  saveStoredProfile(blankProfile);
+  return blankProfile;
 }
 
 export function saveStoredProfile(profile: ImmigrationProfile): void {
@@ -181,6 +212,7 @@ export function saveStoredProfile(profile: ImmigrationProfile): void {
 }
 
 export function getStoredTravelRecords(): TravelRecord[] {
+  migrateLegacyStorageKeys();
   try {
     const raw = localStorage.getItem(STORAGE_KEYS.RECORDS);
     if (raw) {
@@ -189,9 +221,8 @@ export function getStoredTravelRecords(): TravelRecord[] {
   } catch (err) {
     console.error('Failed to load travel records from localStorage', err);
   }
-  // Initialize with demo records if not present
-  saveStoredTravelRecords(DEFAULT_DEMO_RECORDS);
-  return DEFAULT_DEMO_RECORDS;
+  saveStoredTravelRecords([]);
+  return [];
 }
 
 export function saveStoredTravelRecords(records: TravelRecord[]): void {
