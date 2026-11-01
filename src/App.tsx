@@ -39,31 +39,10 @@ export const App: React.FC = () => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [isAddTripModalOpen, setIsAddTripModalOpen] = useState(false);
 
-  // Default to Dark Mode as requested
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    try {
-      const saved = localStorage.getItem('residencytrack_theme');
-      return saved ? saved === 'dark' : true; // Default dark
-    } catch {
-      return true;
-    }
-  });
-
+// Force dark mode permanently (light theme removed)
   useEffect(() => {
-    try {
-      if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('residencytrack_theme', 'dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('residencytrack_theme', 'light');
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  }, [isDarkMode]);
-
-  const toggleTheme = () => setIsDarkMode(prev => !prev);
+    document.documentElement.classList.add('dark');
+  }, []);
 
   // Synchronize state with calculations
   const ilrResult = useMemo(() => {
@@ -161,8 +140,6 @@ export const App: React.FC = () => {
         onTabChange={setCurrentTab}
         profile={profile}
         onOpenProfile={() => setIsProfileModalOpen(true)}
-        isDarkMode={isDarkMode}
-        onToggleTheme={toggleTheme}
       />
 
       {/* Main Content Area */}
@@ -180,26 +157,6 @@ export const App: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg transition-colors"
-              title={isDarkMode ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
-              aria-label="Toggle Theme"
-            >
-              {isDarkMode ? (
-                <>
-                  <Sun className="w-3.5 h-3.5 text-amber-400" />
-                  <span className="text-[11px]">Light</span>
-                </>
-              ) : (
-                <>
-                  <Moon className="w-3.5 h-3.5 text-slate-600" />
-                  <span className="text-[11px]">Dark</span>
-                </>
-              )}
-            </button>
-
             <button
               onClick={() => {
                 setCurrentTab('travel_log');
