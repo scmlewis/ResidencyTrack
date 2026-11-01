@@ -244,7 +244,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
         </div>
 
-        {/* Capacity Warning Testing / Interactive Verification Switcher */}
+        {/* Capacity Warning Testing / Interactive Verification Switcher (dev only) */}
+        {import.meta.env.DEV && (
         <div className="mt-3.5 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
           <span className="text-slate-500 dark:text-slate-400 font-medium text-[11px] sm:text-xs">
             Visual Warning Test:
@@ -292,6 +293,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </button>
           </div>
         </div>
+        )}
       </div>
 
       {/* DEDICATED VISUAL WARNING SYSTEM BANNER */}
