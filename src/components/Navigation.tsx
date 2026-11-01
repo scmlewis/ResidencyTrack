@@ -218,7 +218,7 @@ const bottomNavIds = new Set(['dashboard', 'travel_log', 'analytics', 'timeline'
 
         {/* Navigation Links */}
         <nav className="flex-1 px-3 py-2 space-y-1 overflow-y-auto">
-          {moreItems.map((item) => {
+          {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentTab === item.id;
             return (
