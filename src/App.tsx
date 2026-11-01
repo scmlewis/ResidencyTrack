@@ -44,6 +44,10 @@ export const App: React.FC = () => {
     document.documentElement.classList.add('dark');
   }, []);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentTab]);
+
   // Synchronize state with calculations
   const ilrResult = useMemo(() => {
     return calculateILRContinuousResidence(records, profile);
