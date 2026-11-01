@@ -14,7 +14,8 @@ import {
   Sun,
   Moon,
   BookOpen,
-  Info
+  Info,
+  User
 } from 'lucide-react';
 import { ImmigrationProfile } from '../types';
 
@@ -91,11 +92,12 @@ export const Navigation: React.FC<NavigationProps> = ({
             </button>
           )}
           <button
-            onClick={() => onTabChange('profile')}
-            className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-teal-300 bg-teal-950/60 border border-teal-800/60 rounded-lg hover:bg-teal-900/40 transition-colors"
-          >
-            <span>Profile</span>
-          </button>
+                      onClick={() => onTabChange('profile')}
+                      className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-teal-300 bg-teal-950/60 border border-teal-800/60 rounded-lg hover:bg-teal-900/40 transition-[transform,opacity] active:scale-95"
+                    >
+                      <User className="w-3.5 h-3.5" />
+                      <span>Profile</span>
+                    </button>
         </div>
       </header>
 
@@ -114,7 +116,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 <button
                   key={item.id}
                   onClick={() => handleSelectTab(item.id)}
-                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium transition-colors ${
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium transition-[transform,opacity] active:scale-95 ${
                     isActive
                       ? 'bg-teal-600 text-white font-semibold'
                       : 'text-slate-300 hover:text-white hover:bg-slate-800'
@@ -237,7 +239,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           {onToggleTheme && (
             <button
               onClick={onToggleTheme}
-              className="w-full flex items-center justify-between px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/90 text-slate-200 border border-slate-700/60 transition-colors text-xs font-medium"
+              className="w-full flex items-center justify-between px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/90 text-slate-200 border border-slate-700/60 transition-[transform,opacity] active:scale-95 text-xs font-medium"
             >
               <span className="flex items-center gap-2">
                 {isDarkMode ? <Moon className="w-3.5 h-3.5 text-teal-300" /> : <Sun className="w-3.5 h-3.5 text-amber-400" />}
