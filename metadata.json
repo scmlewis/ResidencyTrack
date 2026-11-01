@@ -1,0 +1,6 @@
+{
+  "name": "ResidencyTrack",
+  "description": "UK immigration compliance & residency planning web application for British National (Overseas) visa holders to track overseas absences, monitor ILR rolling limits, and simulate travel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,886 @@
+# ResidencyTrack
+## Product Requirements Document & Technical Specification
+
+**Product:** ResidencyTrack  
+**Product type:** UK Immigration Compliance & Residency Planning Web App  
+**Initial target:** British National (Overseas) Visa holders  
+**Version:** 0.1 — First Draft  
+**Status:** Prototype Development  
+**Target environment:** Google AI Studio — Build Mode
+
+---
+
+# PART 1 — PRODUCT REQUIREMENTS DOCUMENT
+
+## 1. Product Overview
+
+### 1.1 Product Vision
+
+ResidencyTrack is a personal immigration compliance management application designed to help UK BN(O) visa holders track their UK residence history, monitor overseas absences, plan their Indefinite Leave to Remain (ILR) application, and prepare for British citizenship (Naturalisation).
+
+The application transforms a spreadsheet-based compliance tracker into an interactive, user-friendly web application.
+
+Its primary purpose is to make complex residency calculations transparent, understandable, and manageable over a multi-year immigration journey.
+
+### 1.2 Core Value Proposition
+
+"Know where you stand. Understand your limits. Plan your next move."
+
+The application should enable users to:
+
+- Maintain a complete record of overseas trips.
+- Monitor absence limits across rolling qualifying periods.
+- Understand their estimated ILR eligibility timeline.
+- Track naturalisation residence requirements.
+- Simulate the impact of future travel plans.
+- Identify potential compliance risks before they become problems.
+
+### 1.3 Target Users
+
+Primary persona:
+
+**UK BN(O) Visa Holder**
+
+- Holds a valid BN(O) visa.
+- Is following the standard 5-year settlement route.
+- Regularly travels outside the UK.
+- Wants to avoid exceeding applicable absence limits.
+- Plans to apply for ILR and subsequently British citizenship.
+- Prefers a self-service tracking tool over maintaining complicated spreadsheets.
+
+The first release must focus exclusively on the standard adult BN(O) 5-year settlement journey.
+
+Other immigration routes, exceptional circumstances, dependants and alternative naturalisation routes are outside the initial scope.
+
+## 2. Product Objectives
+
+### Primary Objectives
+
+1. Replace manual spreadsheet-based absence tracking.
+2. Provide accurate and transparent date calculations.
+3. Visualise immigration milestones and residence history.
+4. Allow users to simulate future travel scenarios.
+5. Reduce the risk of accidental absence-limit breaches.
+
+### Secondary Objectives
+
+1. Provide a mobile-friendly experience.
+2. Support data import and export.
+3. Make immigration rules traceable to official government sources.
+4. Establish an architecture that can support additional immigration routes in the future.
+
+### Non-Goals
+
+The application must NOT:
+
+- Provide professional immigration or legal advice.
+- Guarantee ILR or citizenship approval.
+- Automatically submit immigration applications.
+- Interpret complex exceptional circumstances as a legal decision.
+- Use Gemini or another AI model to calculate absence days or determine compliance.
+- Expand to every UK visa category in the first release.
+
+## 3. Core Product Modules
+
+### Module A — Immigration Profile
+
+Purpose: Establish the user's immigration timeline and qualifying-period information.
+
+Required fields:
+
+| Field | Description |
+|---|---|
+| Visa route | BN(O) |
+| Visa grant date | Date of visa approval |
+| First UK arrival date | Date of first physical arrival |
+| Qualifying period start date | User-confirmed date used for planning |
+| Expected ILR application date | Automatically calculated estimate |
+| Actual ILR grant date | User-entered when applicable |
+| Naturalisation route | Standard 5-year route |
+
+Important: Visa grant date, first arrival date and qualifying-period start date must be stored separately. Do not automatically assume that they are interchangeable.
+
+The user must be able to edit the qualifying-period start date.
+
+### Module B — Travel Absence Log
+
+Purpose: Record all overseas trips.
+
+Required fields:
+
+- Departure date
+- Return date
+- Destination
+- Purpose of travel
+- Trip status: Planned / Ongoing / Completed
+- Optional notes
+
+Features:
+
+- Add a new trip.
+- Edit an existing trip.
+- Delete a trip with confirmation.
+- Sort by departure date.
+- Filter by year, destination and trip status.
+- Automatically calculate relevant absence days.
+- Detect overlapping trips.
+- Detect missing or invalid dates.
+- Display incomplete records.
+
+The system must distinguish planned trips from actual historical trips.
+
+### Module C — Absence Analytics Engine
+
+Purpose: Monitor absence limits for ILR and Naturalisation.
+
+ILR:
+
+- Monitor the maximum absence within any applicable rolling 12-month period.
+- Apply the configured 180-day threshold.
+- Identify the date range with the highest absence count.
+- Display remaining allowance against the normal threshold.
+- Detect potential breaches.
+
+Naturalisation:
+
+- Monitor total absences over the applicable 5-year qualifying period.
+- Monitor absences during the final 12 months.
+- Apply the normal 450-day and 90-day thresholds.
+- Exclude departure and return dates from whole-day absence calculations.
+- Display the remaining allowance.
+
+The application must show ILR and Naturalisation results separately.
+
+Do not reuse the same absence-counting function for both routes.
+
+### Module D — Interactive Calendar
+
+Purpose: Visualise residence and travel history.
+
+Features:
+
+- Monthly calendar.
+- Previous / next month navigation.
+- Year selector.
+- Highlight overseas travel periods.
+- Distinguish planned and completed trips.
+- Show travel details when a trip is selected.
+- Display important immigration milestones.
+- Show overlapping or incomplete travel records.
+
+Suggested visual conventions:
+
+- UK residence: neutral background.
+- Completed overseas travel: blue.
+- Planned overseas travel: purple.
+- Potential compliance issue: red.
+- Immigration milestones: highlighted markers.
+
+The calendar should support desktop and mobile layouts.
+
+### Module E — Immigration Timeline
+
+Purpose: Provide a clear overview of the user's immigration journey.
+
+Display:
+
+1. BN(O) visa grant.
+2. First UK arrival.
+3. Qualifying period start.
+4. Five-year settlement milestone.
+5. Earliest estimated ILR application date.
+6. Actual ILR grant date, if entered.
+7. Earliest estimated Naturalisation application date.
+
+The timeline must distinguish:
+
+- Confirmed dates.
+- User-provided estimates.
+- System-generated projections.
+
+Do not display an estimated date as a confirmed legal entitlement.
+
+### Module F — Travel Impact Simulator
+
+Purpose: Allow users to evaluate proposed overseas travel before booking.
+
+User workflow:
+
+1. Enter proposed departure date.
+2. Enter proposed return date.
+3. Select destination.
+4. Click "Simulate Travel".
+
+The system must:
+
+- Temporarily include the proposed trip in the absence calculations.
+- Recalculate all relevant rolling 12-month periods.
+- Recalculate relevant Naturalisation absence totals.
+- Identify any newly created threshold breach.
+- Show the effect on remaining absence allowances.
+- Allow the user to discard or save the proposed trip.
+
+Results must clearly distinguish existing records from simulated scenarios.
+
+---
+
+# PART 2 — USER EXPERIENCE & INTERFACE SPECIFICATION
+
+## 4. Application Navigation
+
+Use a clean dashboard-based navigation structure.
+
+Primary navigation:
+
+1. Dashboard
+2. Travel Log
+3. Absence Analytics
+4. Calendar
+5. Immigration Timeline
+6. Travel Simulator
+7. Settings & Data
+
+Desktop: Persistent sidebar.
+
+Mobile: Compact navigation with a menu or bottom navigation.
+
+## 5. Dashboard Design
+
+The Dashboard is the default landing page.
+
+### Section A — Welcome Header
+
+Display:
+
+- ResidencyTrack logo.
+- User's immigration route.
+- Current tracking date.
+- Last data update.
+
+### Section B — Compliance Summary
+
+Display four key metric cards:
+
+**ILR — Maximum Rolling Absence**
+
+- Highest absence count.
+- Normal threshold: 180 days.
+- Remaining allowance.
+- Relevant 12-month period.
+
+**Naturalisation — Five-Year Absence**
+
+- Total absence days.
+- Normal threshold: 450 days.
+- Remaining allowance.
+
+**Naturalisation — Final 12 Months**
+
+- Total absence days.
+- Normal threshold: 90 days.
+- Remaining allowance.
+
+**Next Immigration Milestone**
+
+- Next milestone.
+- Estimated date.
+- Time remaining.
+
+All metrics must have explanatory tooltips.
+
+### Section C — Absence Trend
+
+Display a chart showing absence days over time.
+
+Include:
+
+- Rolling 12-month absence trend.
+- 180-day reference line.
+- Ability to inspect specific dates.
+
+Do not confuse calendar-year totals with rolling-period totals.
+
+### Section D — Recent Travel
+
+Show the latest five trips.
+
+Include destination, departure, return, absence days and status.
+
+### Section E — Important Notices
+
+Display:
+
+- Missing travel records.
+- Potential overlapping trips.
+- Upcoming travel.
+- Potential threshold breaches.
+- Unverified profile information.
+
+---
+
+# PART 3 — TECHNICAL SPECIFICATION
+
+## 6. Recommended Technology Stack
+
+Build the first draft using the following stack:
+
+| Layer | Technology |
+|---|---|
+| Frontend | React + TypeScript |
+| Build environment | Google AI Studio Build Mode |
+| Styling | Tailwind CSS |
+| UI components | shadcn/ui or equivalent |
+| Date calculations | date-fns |
+| Charts | Recharts |
+| Icons | Lucide |
+| Storage | Browser localStorage |
+| Testing | Vitest |
+| Optional E2E | Playwright |
+
+Use a modular architecture.
+
+Do not create one large component containing the entire application.
+
+## 7. Application Architecture
+
+Organise the application into the following logical layers:
+
+**Presentation Layer**
+
+Responsible for:
+- Dashboard.
+- Navigation.
+- Forms.
+- Calendar.
+- Charts.
+- Data tables.
+- Responsive layout.
+
+**Domain Layer**
+
+Responsible for:
+- Travel record validation.
+- Absence-day calculations.
+- Rolling-period calculations.
+- ILR milestone calculations.
+- Naturalisation calculations.
+- Travel simulations.
+
+**Data Layer**
+
+Responsible for:
+- Loading user data.
+- Saving user data.
+- Importing data.
+- Exporting data.
+- Managing application settings.
+
+**Policy Layer**
+
+Responsible for:
+- Rule definitions.
+- Effective dates.
+- Rule versions.
+- Official source references.
+- Calculation methodology.
+
+The domain and policy layers must not depend on React components.
+
+## 8. Data Model
+
+### ImmigrationProfile
+
+```typescript
+interface ImmigrationProfile {
+  id: string;
+  visaRoute: "BNO";
+  visaGrantDate: string | null;
+  firstUKArrivalDate: string | null;
+  qualifyingPeriodStartDate: string | null;
+  qualifyingPeriodStartConfirmed: boolean;
+  actualILRGrantDate: string | null;
+  naturalisationRoute: "standard_5_year";
+  createdAt: string;
+  updatedAt: string;
+}
+```
+
+### TravelRecord
+
+```typescript
+interface TravelRecord {
+  id: string;
+  departureDate: string;
+  returnDate: string | null;
+  destination: string;
+  purpose: string;
+  status: "planned" | "ongoing" | "completed";
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+```
+
+Use ISO 8601 date-only strings (`YYYY-MM-DD`).
+
+Do not store date-only travel events as timestamps that may shift across time zones.
+
+### PolicyRule
+
+```typescript
+interface PolicyRule {
+  id: string;
+  route: string;
+  category: string;
+  threshold: number | null;
+  periodType: string;
+  countingMethod: string;
+  effectiveFrom: string;
+  effectiveTo: string | null;
+  sourceUrl: string;
+  sourceTitle: string;
+  lastVerifiedAt: string;
+  status: "verified" | "under_review" | "superseded";
+}
+```
+
+Policy rules must be configurable rather than scattered as hardcoded values throughout the application.
+
+---
+
+# PART 4 — CALCULATION ENGINE SPECIFICATION
+
+## 9. Date and Absence Calculation Rules
+
+This is the most important component of the entire application.
+
+All calculations must be deterministic, reproducible and independently testable.
+
+### 9.1 Date Handling
+
+- Use calendar dates, not local timestamps.
+- Handle leap years.
+- Handle month boundaries.
+- Handle year boundaries.
+- Avoid timezone-related date shifts.
+- Validate all date inputs.
+
+### 9.2 Naturalisation Counting Method
+
+For the standard 5-year naturalisation route:
+
+Count only complete days spent outside the UK.
+
+Formula:
+
+```text
+Naturalisation absence days =
+Return date - Departure date - 1
+```
+
+Example:
+
+Departure: 1 June  
+Return: 10 June
+
+Counted absence: 8 days.
+
+The departure date and return date are excluded.
+
+A same-day departure and return results in zero whole days of absence.
+
+### 9.3 ILR Continuous Residence Calculation
+
+The standard BN(O) settlement route normally requires:
+
+- Five years of qualifying continuous residence.
+- No more than 180 days outside the UK in any applicable 12-month period.
+
+The calculation engine must:
+
+1. Evaluate every relevant calendar date within the qualifying period.
+2. Construct the applicable 12-calendar-month windows.
+3. Calculate the absence-day total for each window.
+4. Identify the maximum absence count.
+5. Return the relevant window start and end dates.
+6. Compare the result against the normal 180-day threshold.
+
+Do not simply calculate one total per trip.
+
+Do not assume that checking only departure and return dates is sufficient.
+
+**Important implementation constraint:** The exact treatment of travel boundary dates for the ILR rule must be verified against the applicable Home Office guidance before the engine is labelled officially compliant. Keep this calculation method configurable and document the chosen interpretation.
+
+Do not silently reuse the Naturalisation whole-day counting method for ILR.
+
+### 9.4 Naturalisation Five-Year Calculation
+
+Use the standard five-year naturalisation qualifying period.
+
+Normal absence threshold:
+
+450 days.
+
+The qualifying period must be calculated using calendar-year arithmetic, not a fixed 1,825 or 1,826-day assumption.
+
+The application must also remind users that they generally need to have been physically present in the UK on the first day of the qualifying period.
+
+### 9.5 Naturalisation Final 12-Month Calculation
+
+Normal absence threshold:
+
+90 days.
+
+Calculate the relevant 12-calendar-month period before the proposed application date.
+
+Use the same whole-day counting methodology as the overall naturalisation calculation.
+
+### 9.6 ILR Eligibility Date
+
+The normal earliest application date is 28 days before completing five years of qualifying residence.
+
+Conceptually:
+
+```text
+Five-year anniversary =
+Qualifying period start date + 5 calendar years
+
+Earliest application date =
+Five-year anniversary - 28 days
+```
+
+This is an estimate subject to the applicable qualifying-period rules and user-confirmed dates.
+
+Do not use a fixed 1,826-day calculation.
+
+### 9.7 Naturalisation Eligibility Date
+
+For the standard route, a person generally needs to have held ILR for at least 12 months before applying.
+
+Conceptually:
+
+```text
+Earliest naturalisation date =
+Actual ILR grant date + 12 calendar months
+```
+
+This must use calendar-month arithmetic, not a fixed 365-day addition.
+
+Naturalisation also requires a separate five-year qualifying-period assessment.
+
+Do not automatically assume that meeting the date and absence thresholds means the user qualifies for citizenship.
+
+---
+
+# PART 5 — VALIDATION & ERROR HANDLING
+
+## 10. Travel Record Validation
+
+The system must detect:
+
+- Return date earlier than departure date.
+- Missing departure date.
+- Missing return date.
+- Duplicate records.
+- Overlapping trips.
+- Trips outside the configured qualifying period.
+- Invalid date formats.
+- Inconsistent trip statuses.
+
+A trip with missing data must never silently count as zero absence.
+
+### Data Completeness States
+
+Use three distinct states:
+
+- COMPLETE: All required information is present.
+- INCOMPLETE: Some required information is missing.
+- INVALID: The record contains contradictory or impossible dates.
+
+### Compliance States
+
+Use:
+
+- WITHIN NORMAL LIMIT
+- APPROACHING NORMAL LIMIT
+- NORMAL LIMIT EXCEEDED
+- INSUFFICIENT DATA
+- POLICY VERIFICATION REQUIRED
+
+Do not use a binary Pass / Fail system.
+
+A threshold exceeded does not automatically establish that an application must be refused, because official guidance may allow discretion in certain circumstances.
+
+---
+
+# PART 6 — DATA MANAGEMENT & PRIVACY
+
+## 11. First Release Storage
+
+The first prototype must use browser localStorage.
+
+Requirements:
+
+- Automatically save changes.
+- Retain data after browser refresh.
+- Provide manual JSON export.
+- Provide JSON import.
+- Provide CSV export of travel records.
+- Validate imported files before replacing existing data.
+- Warn before deleting all records.
+- Provide a sample/demo dataset that can be reset.
+
+No account registration or authentication is required in the first release.
+
+No cloud database is required.
+
+No real passport numbers, immigration account credentials or sensitive identity documents should be requested.
+
+Clearly inform users that localStorage data is browser-specific and may be lost if browser data is cleared.
+
+---
+
+# PART 7 — DESIGN SYSTEM
+
+## 12. Visual Direction
+
+Design style:
+
+**Professional / Minimal / Trustworthy / Data-driven**
+
+The interface should feel like a modern personal finance or compliance dashboard, not a government website.
+
+Suggested palette:
+
+| Element | Colour |
+|---|---|
+| Primary | Deep Navy `#173B57` |
+| Secondary | Teal `#14B8A6` |
+| Background | `#F7F9FC` |
+| Surface | `#FFFFFF` |
+| Text | `#1E293B` |
+| Success | `#16A34A` |
+| Warning | `#D97706` |
+| Danger | `#DC2626` |
+
+Design principles:
+
+- Clear typography.
+- Consistent spacing.
+- Subtle borders and shadows.
+- Readable metric cards.
+- Clean data tables.
+- Meaningful charts.
+- No unnecessary animations.
+- Avoid excessive use of colours.
+- Support desktop, tablet and mobile screens.
+
+The application must be usable on a mobile browser.
+
+---
+
+# PART 8 — ACCEPTANCE CRITERIA
+
+## 13. Minimum Functional Requirements
+
+The first draft is considered successful when:
+
+1. A user can create and edit an immigration profile.
+2. A user can add, edit and delete travel records.
+3. All travel records persist after browser refresh.
+4. The application correctly calculates Naturalisation whole-day absences.
+5. The application can calculate the maximum absence within the configured ILR rolling 12-month windows.
+6. The application distinguishes ILR and Naturalisation calculations.
+7. The dashboard displays all three absence metrics.
+8. The calendar displays travel history.
+9. The timeline displays estimated immigration milestones.
+10. The Travel Simulator can calculate the impact of a proposed trip without permanently changing the original records.
+11. Invalid and incomplete records are clearly identified.
+12. Users can export and restore their data.
+13. The application works on desktop and mobile.
+14. All important calculations have automated tests.
+15. No AI-generated legal eligibility decision is displayed.
+
+## 14. Required Calculation Test Cases
+
+The following cases must be implemented as automated tests.
+
+| Test | Expected behaviour |
+|---|---|
+| Same-day UK departure and return | 0 Naturalisation absence days |
+| Departure 1 June, return 10 June | 8 Naturalisation absence days |
+| Departure 31 December, return 3 January | 2 Naturalisation absence days |
+| Leap-year February | Correct calendar arithmetic |
+| Exactly 180 ILR absence days | Within normal threshold |
+| 181 ILR absence days | Normal threshold exceeded |
+| Exactly 450 Naturalisation absence days | Within normal threshold |
+| 451 Naturalisation absence days | Normal threshold exceeded |
+| Exactly 90 final-12-month days | Within normal threshold |
+| 91 final-12-month days | Normal threshold exceeded |
+| Two overlapping trips | Validation warning |
+| Missing return date | Incomplete record |
+| Travel simulation | Original records remain unchanged |
+| No travel records | Display insufficient data / no records, not an unqualified legal Pass |
+
+Additional tests must cover overlapping rolling windows, leap days, calendar-month boundaries and trips crossing qualifying-period boundaries.
+
+---
+
+# PART 9 — FUTURE ROADMAP
+
+## 15. Version 0.1 — First Draft
+
+- Responsive web application.
+- Immigration profile.
+- Travel log.
+- Dashboard.
+- Absence calculations.
+- Calendar.
+- Timeline.
+- Travel simulator.
+- Local storage.
+- Data import/export.
+
+## Version 0.2 — Engineering Hardening
+
+- Expanded test suite.
+- Rule version management.
+- Official source references.
+- Improved validation.
+- Excel import support.
+- Accessibility improvements.
+- Better error handling.
+
+## Version 0.3 — Personal Account
+
+- Google authentication.
+- Cloud database.
+- Multi-device synchronisation.
+- Encrypted backup.
+- Email reminders.
+
+## Version 1.0 — Product Expansion
+
+- Multiple immigration profiles.
+- Dependant tracking.
+- Advanced travel planning.
+- Additional UK immigration routes.
+- Multilingual interface.
+- Policy update monitoring.
+
+---
+
+# PART 10 — OFFICIAL REFERENCE SOURCES
+
+Use these sources as the initial policy reference library:
+
+1. BN(O) Visa — Settlement:
+https://www.gov.uk/british-national-overseas-bno-visa/settle-in-the-uk
+
+2. Immigration Rules — Appendix Continuous Residence:
+https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-continuous-residence
+
+3. Immigration Rules — Appendix Hong Kong BN(O):
+https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-hong-kong-british-national-overseas
+
+4. Form AN — Naturalisation Guidance:
+https://www.gov.uk/government/publications/form-an-guidance/form-an-guidance-accessible
+
+5. British Nationality Act 1981:
+https://www.legislation.gov.uk/ukpga/1981/61/contents
+
+The system must store the source URL, relevant rule, last verified date and effective date for each policy configuration.
+
+Do not assume that a policy rule remains valid indefinitely.
+
+---
+
+# PART 11 — GOOGLE AI STUDIO INITIAL BUILD PROMPT
+
+You are a senior full-stack product engineer, UX designer and software architect.
+
+Build a working first-draft web application called **ResidencyTrack**, based on the Product Requirements Document and Technical Specification above.
+
+Your task is to implement the actual application, not merely produce a design mockup or describe how it could be built.
+
+## Development Instructions
+
+1. Use React and TypeScript.
+2. Use Tailwind CSS for styling.
+3. Use Lucide icons.
+4. Use Recharts for data visualisation.
+5. Use date-fns for date calculations where appropriate.
+6. Use browser localStorage for persistent storage.
+7. Build a modular and maintainable component structure.
+8. Implement responsive desktop and mobile layouts.
+9. Include realistic but clearly labelled DEMO DATA.
+10. Make all primary navigation and interactive controls functional.
+
+## Critical Engineering Constraints
+
+- Do not use Gemini or any LLM to calculate absence days or compliance.
+- All date calculations must use deterministic functions.
+- Separate ILR and Naturalisation counting logic.
+- Do not hardcode policy rules across UI components.
+- Do not assume that 365 days equals 12 calendar months.
+- Handle leap years and timezone-safe date-only values.
+- Do not silently treat missing data as zero.
+- Do not display legal eligibility guarantees.
+- Do not implement cloud authentication, Firebase or external databases in this first draft.
+- Do not use real personal data as seeded demonstration data.
+
+## Build Priority
+
+Implement in this order:
+
+1. Application layout and navigation.
+2. Immigration Profile.
+3. Travel Absence Log.
+4. Calculation Engine.
+5. Dashboard.
+6. Calendar.
+7. Immigration Timeline.
+8. Travel Impact Simulator.
+9. Settings and Data Management.
+
+The calculation engine must be implemented and tested before presenting compliance metrics as meaningful results.
+
+## UI Expectations
+
+Create a polished, professional SaaS-style dashboard.
+
+The Dashboard should be the default landing page.
+
+Use a clean navy and teal visual identity.
+
+Avoid excessive decoration.
+
+Prioritise clear data visualisation, meaningful metrics and excellent mobile usability.
+
+## Development Workflow
+
+Before implementation:
+
+1. Review the entire specification.
+2. Identify any ambiguous or conflicting requirements.
+3. Establish the application architecture.
+4. Define the core data types.
+5. Define the date-calculation functions and their test cases.
+
+Then build the application.
+
+After implementation:
+
+1. Run the available tests.
+2. Fix TypeScript errors.
+3. Fix runtime errors.
+4. Verify that data persists after refresh.
+5. Verify all primary navigation.
+6. Test the calculation edge cases.
+7. Confirm that the Travel Simulator does not modify original records.
+8. Provide a concise implementation summary and list any incomplete requirements.
+
+Do not claim that a feature is implemented unless it actually works.
+
+**Final deliverable:** A functional, responsive ResidencyTrack web application that can be previewed directly in Google AI Studio.
+
