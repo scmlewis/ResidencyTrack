@@ -34,3 +34,7 @@
 .fade-in-tab {
   animation: fadeInTab 0.25s ease-out;
 }
+
+main {
+  scrollbar-gutter: stable;
+}
