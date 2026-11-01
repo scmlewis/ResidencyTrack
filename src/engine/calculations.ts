@@ -232,7 +232,7 @@ export function calculateILRContinuousResidence(
 ): ILRComplianceResult {
   const qualifyingStart = profile?.qualifyingPeriodStartDate;
   
-  if (!qualifyingStart || !isValidIsoDate(qualifyingStart)) {
+  if (!qualifyingStart || !isValidIsoDate(qualifyingStart) || !profile?.qualifyingPeriodStartConfirmed) {
     return {
       maxAbsenceCount: 0,
       threshold: ILR_12_MONTH_MAX_ABSENCE,
@@ -259,14 +259,16 @@ export function calculateILRContinuousResidence(
   const hasIncomplete = records.some(r => !r.departureDate || !r.returnDate);
   const hasInvalid = records.some(r => r.departureDate && r.returnDate && r.departureDate > r.returnDate);
 
+  const completenessConfirmed = profile?.travelHistoryCompleteness === 'CONFIRMED_COMPLETE';
+
   if (validTrips.length === 0) {
     return {
       maxAbsenceCount: 0,
       threshold: ILR_12_MONTH_MAX_ABSENCE,
       remainingAllowance: ILR_12_MONTH_MAX_ABSENCE,
       peakWindow: null,
-      status: 'WITHIN_NORMAL_LIMIT',
-      hasIncompleteData: hasIncomplete,
+      status: completenessConfirmed ? 'WITHIN_NORMAL_LIMIT' : 'INSUFFICIENT_DATA',
+      hasIncompleteData: completenessConfirmed ? hasIncomplete : true,
       hasInvalidData: hasInvalid,
       qualifyingStartDate: qualifyingStart,
       qualifyingEndDate: qualifyingEnd,
@@ -445,7 +447,7 @@ export function calculateNaturalisationRequirements(
 
   // 5-year qualifying period for Naturalisation:
   // Starts exactly 5 calendar years before the application date
-  const fiveYearStart = addYearsCalendar(appDate, -5);
+  const fiveYearStart = addDays(addYearsCalendar(appDate, -5), 1);
   const fiveYearEnd = appDate;
 
   // Final 12 months period:
@@ -520,9 +522,9 @@ export function calculateNaturalisationRequirements(
 /**
  * Calculates key immigration milestones from the immigration profile.
  */
-export function calculateMilestones(profile: ImmigrationProfile | null): TimelineMilestone[] {
+export function calculateMilestones(profile: ImmigrationProfile | null, referenceDate?: string): TimelineMilestone[] {
   const milestones: TimelineMilestone[] = [];
-  const today = '2026-11-01'; // System current anchor date from metadata or today
+  const today = referenceDate || new Date().toISOString().slice(0, 10);
 
   // 1. Visa Grant
   milestones.push({

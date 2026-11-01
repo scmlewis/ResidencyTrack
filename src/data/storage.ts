@@ -13,6 +13,7 @@ export const DEFAULT_DEMO_PROFILE: ImmigrationProfile = {
   firstUKArrivalDate: '2021-08-15',
   qualifyingPeriodStartDate: '2021-08-15',
   qualifyingPeriodStartConfirmed: true,
+  travelHistoryCompleteness: 'NOT_CONFIRMED',
   actualILRGrantDate: null,
   naturalisationRoute: 'standard_5_year',
   createdAt: '2021-08-15T10:00:00.000Z',
@@ -158,12 +159,15 @@ export function getStoredProfile(): ImmigrationProfile {
   try {
     const raw = localStorage.getItem(STORAGE_KEYS.PROFILE);
     if (raw) {
-      return JSON.parse(raw);
+      const parsed = JSON.parse(raw);
+      if (parsed.travelHistoryCompleteness !== 'CONFIRMED_COMPLETE') {
+        parsed.travelHistoryCompleteness = 'NOT_CONFIRMED';
+      }
+      return parsed;
     }
   } catch (err) {
     console.error('Failed to load profile from localStorage', err);
   }
-  // Initialize with demo profile if not present
   saveStoredProfile(DEFAULT_DEMO_PROFILE);
   return DEFAULT_DEMO_PROFILE;
 }
@@ -213,6 +217,7 @@ export function clearAllData(): { profile: ImmigrationProfile; records: TravelRe
     firstUKArrivalDate: null,
     qualifyingPeriodStartDate: null,
     qualifyingPeriodStartConfirmed: false,
+    travelHistoryCompleteness: 'NOT_CONFIRMED',
     actualILRGrantDate: null,
     naturalisationRoute: 'standard_5_year',
     createdAt: new Date().toISOString(),
@@ -257,6 +262,7 @@ export function importDataFromJSON(jsonString: string): {
       firstUKArrivalDate: data.profile.firstUKArrivalDate || null,
       qualifyingPeriodStartDate: data.profile.qualifyingPeriodStartDate || null,
       qualifyingPeriodStartConfirmed: Boolean(data.profile.qualifyingPeriodStartConfirmed),
+      travelHistoryCompleteness: data.profile.travelHistoryCompleteness === 'CONFIRMED_COMPLETE' ? 'CONFIRMED_COMPLETE' : 'NOT_CONFIRMED',
       actualILRGrantDate: data.profile.actualILRGrantDate || null,
       naturalisationRoute: 'standard_5_year',
       createdAt: data.profile.createdAt || new Date().toISOString(),

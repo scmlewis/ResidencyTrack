@@ -58,7 +58,7 @@ export const App: React.FC = () => {
   }, [records, profile]);
 
   const milestones = useMemo(() => {
-    return calculateMilestones(profile);
+    return calculateMilestones(profile, new Date().toISOString().slice(0, 10));
   }, [profile]);
 
   // Handlers for profile

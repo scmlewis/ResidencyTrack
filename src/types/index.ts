@@ -20,6 +20,7 @@ export interface ImmigrationProfile {
   firstUKArrivalDate: string | null; // ISO YYYY-MM-DD
   qualifyingPeriodStartDate: string | null; // ISO YYYY-MM-DD
   qualifyingPeriodStartConfirmed: boolean;
+  travelHistoryCompleteness?: 'CONFIRMED_COMPLETE' | 'NOT_CONFIRMED';
   actualILRGrantDate: string | null; // ISO YYYY-MM-DD
   naturalisationRoute: NaturalisationRoute;
   createdAt: string;
