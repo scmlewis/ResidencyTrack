@@ -129,6 +129,10 @@ export const App: React.FC = () => {
     about: {
       title: 'About & Credits',
       subtitle: 'Creator information and source code links'
+    },
+    profile: {
+      title: 'Immigration Profile',
+      subtitle: 'Configure your BN(O) qualifying timeline'
     }
   };
 
