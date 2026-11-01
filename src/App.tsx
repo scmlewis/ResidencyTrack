@@ -29,6 +29,8 @@ import { ImmigrationTimelineView } from './components/ImmigrationTimelineView';
 import { TravelSimulatorView } from './components/TravelSimulatorView';
 import { SettingsAndDataView } from './components/SettingsAndDataView';
 import { ImmigrationProfileModal } from './components/ImmigrationProfileModal';
+import { AboutView } from './components/AboutView';
+import { TutorialView } from './components/TutorialView';
 
 export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<NavTab>('dashboard');
@@ -140,6 +142,14 @@ export const App: React.FC = () => {
     settings: {
       title: 'Settings, Data & Policy Rules',
       subtitle: 'JSON backups, CSV exports, official statutory references, and test suite'
+    },
+    tutorial: {
+      title: 'Tutorial & Onboarding',
+      subtitle: 'Step-by-step guide to get started with ResidencyTrack'
+    },
+    about: {
+      title: 'About & Credits',
+      subtitle: 'Creator information and source code links'
     }
   };
 
@@ -280,6 +290,8 @@ export const App: React.FC = () => {
               onDataLoaded={handleDataLoaded}
             />
           )}
+          {currentTab === 'tutorial' && <TutorialView />}
+          {currentTab === 'about' && <AboutView />}
         </main>
       </div>
 

@@ -12,7 +12,9 @@ import {
   Menu,
   X,
   Sun,
-  Moon
+  Moon,
+  BookOpen,
+  Info
 } from 'lucide-react';
 import { ImmigrationProfile } from '../types';
 
@@ -23,7 +25,9 @@ export type NavTab =
   | 'calendar'
   | 'timeline'
   | 'simulator'
-  | 'settings';
+  | 'settings'
+  | 'tutorial'
+  | 'about';
 
 interface NavigationProps {
   currentTab: NavTab;
@@ -52,6 +56,8 @@ export const Navigation: React.FC<NavigationProps> = ({
     { id: 'timeline', label: 'Immigration Timeline', icon: Milestone },
     { id: 'simulator', label: 'Travel Simulator', icon: SlidersHorizontal },
     { id: 'settings', label: 'Settings & Policy Rules', icon: Settings },
+  { id: 'tutorial', label: 'Tutorial & Onboarding', icon: BookOpen },
+  { id: 'about', label: 'About & Credits', icon: Info },
   ];
 
   const handleSelectTab = (tab: NavTab) => {
@@ -136,7 +142,6 @@ export const Navigation: React.FC<NavigationProps> = ({
           { id: 'travel_log' as NavTab, label: 'Trips', icon: PlaneTakeoff },
           { id: 'analytics' as NavTab, label: 'Analytics', icon: LineChart },
           { id: 'timeline' as NavTab, label: 'Timeline', icon: Milestone },
-          { id: 'simulator' as NavTab, label: 'Simulator', icon: SlidersHorizontal },
         ].map(item => {
           const Icon = item.icon;
           const isActive = currentTab === item.id;
@@ -155,6 +160,15 @@ export const Navigation: React.FC<NavigationProps> = ({
             </button>
           );
         })}
+        <button
+          onClick={() => setMobileMenuOpen(true)}
+          className={`flex flex-col items-center justify-center py-1.5 px-2.5 rounded-lg transition-all min-w-[56px] ${
+            mobileMenuOpen ? 'text-teal-400 font-semibold' : 'text-slate-400 hover:text-slate-200'
+          }`}
+        >
+          <Menu className="w-5 h-5 mb-0.5" />
+          <span className="text-[10px] tracking-tight">More</span>
+        </button>
       </nav>
 
       {/* Desktop Persistent Sidebar */}
