@@ -95,13 +95,6 @@ const bottomNavIds = new Set(['dashboard', 'travel_log', 'analytics', 'timeline'
               {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-300" />}
             </button>
           )}
-          <button
-                      onClick={() => onTabChange('profile')}
-                      className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-teal-300 bg-teal-950/60 border border-teal-800/60 rounded-lg hover:bg-teal-900/40 transition-[transform,opacity] active:scale-95"
-                    >
-                      <User className="w-3.5 h-3.5" />
-                      <span>Profile</span>
-                    </button>
         </div>
       </header>
 
