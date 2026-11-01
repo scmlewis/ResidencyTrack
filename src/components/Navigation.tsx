@@ -172,7 +172,7 @@ const bottomNavIds = new Set(['dashboard', 'travel_log', 'analytics', 'timeline'
       </nav>
 
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden lg:flex flex-col w-64 bg-[#0B132B]/95 text-white border-r border-slate-700/60 shrink-0 select-none  fixed top-0 left-0 bottom-0 z-40 overflow-hidden ">
+      <aside className="hidden lg:flex flex-col w-64 bg-[#0B132B]/95 text-white border-r border-slate-700/60 shrink-0 select-none  fixed top-0 left-0 bottom-0 z-40 overflow-y-auto ">
         {/* Brand Zone */}
         <div className="p-5 border-b border-slate-700">
           <div className="flex items-center gap-3">
