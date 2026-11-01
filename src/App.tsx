@@ -144,7 +144,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0B132B] flex flex-col lg:flex-row text-slate-800 dark:text-slate-100 transition-colors">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0B132B] flex flex-col lg:flex-row text-slate-800 dark:text-slate-100 transition-colors overflow-x-hidden max-w-full">
       {/* Sidebar Navigation */}
       <Navigation
         currentTab={currentTab}
@@ -211,7 +211,7 @@ export const App: React.FC = () => {
         </header>
 
         {/* View Content Viewport */}
-        <main className="flex-1 p-3 sm:p-6 lg:p-8 pb-24 lg:pb-8 max-w-7xl w-full mx-auto">
+        <main className="flex-1 p-3 sm:p-6 lg:p-8 pb-24 lg:pb-8 max-w-7xl w-full mx-auto min-w-0 overflow-x-auto">
           {currentTab === 'dashboard' && (
             <DashboardView
               profile={profile}
