@@ -143,7 +143,7 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         </div>
 
         {/* Progress Bar Container with 75%, 90%, 100% Marker Lines */}
-        <div className="relative w-full bg-slate-200/90 dark:bg-slate-800 h-3 rounded-full overflow-hidden shadow-inner">
+        <div className="relative w-full bg-slate-200/90 dark:bg-slate-900 h-3 rounded-full overflow-hidden shadow-inner">
           {/* Active progress fill */}
           <div
             className={`h-full rounded-full transition-all duration-500 ${current.barColor}`}

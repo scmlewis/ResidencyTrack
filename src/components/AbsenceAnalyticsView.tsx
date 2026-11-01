@@ -177,7 +177,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                   </span>
                   <span className="text-xs font-mono text-slate-500 dark:text-slate-400">/ 180 days limit</span>
                 </div>
-                <div className="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full mt-2.5 overflow-hidden">
+                <div className="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full mt-2.5 overflow-hidden">
                   <div
                     className={`h-full rounded-full transition-all ${
                       ilrResult.maxAbsenceCount > 180
@@ -328,7 +328,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                   <span className="text-xs font-mono text-slate-500 dark:text-slate-400">/ 450 days</span>
                 </div>
 
-                <div className="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden mb-3">
+                <div className="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden mb-3">
                   <div
                     className={`h-full rounded-full transition-all ${
                       natResult.fiveYearAbsenceDays > 450
@@ -378,7 +378,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                   <span className="text-xs font-mono text-slate-500 dark:text-slate-400">/ 90 days</span>
                 </div>
 
-                <div className="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden mb-3">
+                <div className="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden mb-3">
                   <div
                     className={`h-full rounded-full transition-all ${
                       natResult.final12MonthsAbsenceDays > 90

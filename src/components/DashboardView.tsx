@@ -352,7 +352,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
 
               {/* Progress Track with visual indicator lines */}
-              <div className="relative w-full bg-slate-100 dark:bg-slate-800 h-2 sm:h-2.5 rounded-full overflow-hidden shadow-inner">
+              <div className="relative w-full bg-slate-100 dark:bg-slate-900 h-2 sm:h-2.5 rounded-full overflow-hidden shadow-inner">
                 <div
                   className={`h-full rounded-full transition-all duration-300 ${cardBarColor}`}
                   style={{ width: `${Math.min(100, Math.max(3, capacityPct))}%` }}
