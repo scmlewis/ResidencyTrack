@@ -68,7 +68,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   return (
     <>
       {/* Mobile Top Header */}
-      <header className="lg:hidden fixed top-3 left-3 right-3 z-40 flex items-center justify-between px-4 py-2.5 bg-slate-900/90 backdrop-blur-md text-white border border-slate-700/60 rounded-xl shadow-2xl transition-colors">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 py-2.5 bg-slate-900/90 backdrop-blur-md text-white border-b border-slate-700/60 shadow-2xl transition-colors">
         <div className="flex items-center gap-2.5">
           <div className="w-7 h-7 rounded-lg bg-teal-600/30 border border-teal-500/40 flex items-center justify-center text-teal-300 font-bold text-xs tracking-wider">
             RT
@@ -136,7 +136,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       )}
 
       {/* Mobile Bottom Thumb Navigation Bar */}
-      <nav aria-label="Mobile Navigation" className="lg:hidden fixed bottom-3 left-3 right-3 z-40 bg-slate-900/90 backdrop-blur-md border border-slate-700/60 rounded-xl shadow-2xl py-1 px-2 flex justify-around items-center">
+      <nav aria-label="Mobile Navigation" className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-900/90 backdrop-blur-md border-t border-slate-700/60 shadow-2xl py-1 px-2 flex justify-around items-center">
         {[
           { id: 'dashboard' as NavTab, label: 'Overview', icon: LayoutDashboard },
           { id: 'travel_log' as NavTab, label: 'Trips', icon: PlaneTakeoff },
@@ -172,7 +172,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       </nav>
 
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden lg:flex flex-col w-64 bg-slate-900/95 text-white border border-slate-700/60 shrink-0 select-none rounded-xl shadow-2xl backdrop-blur-md fixed top-4 left-4 bottom-4 z-40 overflow-hidden">
+      <aside className="hidden lg:flex flex-col w-64 bg-slate-900/95 text-white border-r border-slate-700/60 shrink-0 select-none backdrop-blur-md fixed top-0 left-0 bottom-0 z-40 overflow-hidden shadow-2xl">
         {/* Brand Zone */}
         <div className="p-5 border-b border-slate-800">
           <div className="flex items-center gap-3">
