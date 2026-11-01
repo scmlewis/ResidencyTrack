@@ -153,37 +153,27 @@ export const App: React.FC = () => {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         {/* Top Header Bar */}
-        <header className="hidden lg:flex items-center justify-between px-8 py-3.5 bg-white/90 dark:bg-[#0B132B]/90  border-b border-slate-200/80 dark:border-slate-700/60 shrink-0 z-30  fixed top-0 left-[16rem] right-0 transition-colors">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-semibold text-slate-400 dark:text-slate-300 ">
-              {currentTab.replace('_', ' ')}
-            </span>
-            <span className="text-slate-300 dark:text-slate-600">/</span>
-            <span className="text-xs font-bold text-slate-700 dark:text-slate-200">
-              {pageTitles[currentTab].title}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => {
-                setCurrentTab('travel_log');
-                setIsAddTripModalOpen(true);
-              }}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg shadow-xs transition-colors whitespace-nowrap"
-            >
-              <Plus className="w-3.5 h-3.5" />
-              <span>Log Overseas Trip</span>
-            </button>
-            <button
-              onClick={() => setIsProfileModalOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg transition-colors whitespace-nowrap"
-            >
-              <User className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
-              <span>Immigration Profile</span>
-            </button>
-          </div>
-        </header>
+        <header className="hidden lg:flex items-center justify-end px-8 py-3.5 bg-white/90 dark:bg-[#0B132B]/90  border-b border-slate-200/80 dark:border-slate-700/60 shrink-0 z-30  fixed top-0 left-[16rem] right-0 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => {
+                        setCurrentTab('travel_log');
+                        setIsAddTripModalOpen(true);
+                      }}
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors whitespace-nowrap"
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                      <span>Log Trip</span>
+                    </button>
+                    <button
+                      onClick={() => setCurrentTab('profile')}
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg transition-colors whitespace-nowrap"
+                    >
+                      <User className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
+                      <span>Profile</span>
+                    </button>
+                  </div>
+                </header>
 
         {/* View Content Viewport */}
         <main key={currentTab} className="flex-1 p-3 sm:p-6 lg:p-8 pt-16 sm:pt-6 lg:pt-16 lg:pl-[16rem] pb-24 sm:pb-6 lg:pb-8 max-w-7xl w-full mx-auto min-w-0 overflow-x-auto fade-in-tab">
