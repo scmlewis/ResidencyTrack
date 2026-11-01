@@ -58,9 +58,13 @@ export const Navigation: React.FC<NavigationProps> = ({
     { id: 'timeline', label: 'Immigration Timeline', icon: Milestone },
     { id: 'simulator', label: 'Travel Simulator', icon: SlidersHorizontal },
     { id: 'settings', label: 'Settings & Policy Rules', icon: Settings },
-  { id: 'tutorial', label: 'Tutorial & Onboarding', icon: BookOpen },
-  { id: 'about', label: 'About & Credits', icon: Info },
+  { id: 'tutorial', label: 'Guide', icon: BookOpen },
+  { id: 'about', label: 'About', icon: Info },
+  { id: 'profile', label: 'Profile', icon: User },
   ];
+
+const bottomNavIds = new Set(['dashboard', 'travel_log', 'analytics', 'timeline']);
+  const moreItems = navItems.filter(item => !bottomNavIds.has(item.id));
 
   const handleSelectTab = (tab: NavTab) => {
     onTabChange(tab);
@@ -214,7 +218,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
         {/* Navigation Links */}
         <nav className="flex-1 px-3 py-2 space-y-1 overflow-y-auto">
-          {navItems.map((item) => {
+          {moreItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentTab === item.id;
             return (

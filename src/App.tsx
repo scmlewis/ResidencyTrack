@@ -127,11 +127,11 @@ export const App: React.FC = () => {
       subtitle: 'JSON backups, CSV exports, official statutory references, and test suite'
     },
     tutorial: {
-      title: 'Tutorial & Onboarding',
+      title: 'Guide & Onboarding',
       subtitle: 'Step-by-step guide to get started with ResidencyTrack'
     },
     about: {
-      title: 'About & Credits',
+      title: 'About',
       subtitle: 'Creator information and source code links'
     },
     profile: {
