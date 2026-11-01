@@ -49,5 +49,3 @@ export const TutorialView: React.FC = () => {
 };
 
 export default TutorialView;
-EOF
-echo done

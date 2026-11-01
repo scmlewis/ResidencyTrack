@@ -64,5 +64,3 @@ export const AboutView: React.FC = () => {
 };
 
 export default AboutView;
-EOF
-echo done
