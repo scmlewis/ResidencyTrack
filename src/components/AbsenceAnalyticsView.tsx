@@ -123,7 +123,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
           </div>
 
           {/* Route Selector Tabs */}
-          <div className="w-full sm:w-auto grid grid-cols-2 sm:flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-lg border border-slate-200 dark:border-slate-700">
+          <div className="w-full sm:w-auto grid grid-cols-2 sm:flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-700/80 rounded-lg border border-slate-200 dark:border-slate-700">
             <button
               onClick={() => setActiveTab('ilr')}
               className={`px-3 py-1.5 text-xs font-semibold rounded-md text-center transition-colors ${
@@ -230,7 +230,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 {/* Mobile View */}
                 <div className="md:hidden space-y-2">
                   {ilrResult.peakWindow.tripsInWindow.map((t, i) => (
-                    <div key={i} className="p-2.5 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/40 text-xs flex items-center justify-between">
+                    <div key={i} className="p-2.5 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-700/40 text-xs flex items-center justify-between">
                       <div>
                         <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
                           <MapPin className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
@@ -280,7 +280,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
           </div>
 
           {/* Rule Methodology & Official Guidance */}
-          <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 text-xs space-y-3 transition-colors">
+          <div className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 text-xs space-y-3 transition-colors">
             <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-slate-100">
               <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
               <span>Official Appendix Continuous Residence Counting Methodology</span>
@@ -459,7 +459,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 {yearlyBreakdown.map((y, idx) => (
                   <div
                     key={y.yearIndex}
-                    className={`p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-lg ${
+                    className={`p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg ${
                       idx === 4 ? 'col-span-2 sm:col-span-1' : ''
                     }`}
                   >

@@ -278,7 +278,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               )}
 
               {/* Trip Counted Days Summary */}
-              <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs flex items-center justify-between font-mono">
+              <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs flex items-center justify-between font-mono">
                 <span className="text-slate-600 dark:text-slate-400">Simulated Whole Days Outside UK:</span>
                 <span className="font-bold text-slate-900 dark:text-slate-100 text-sm">
                   +{simulationResult.simulatedTripAbsenceDays} days
@@ -288,7 +288,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               {/* Mobile Comparison Cards (md:hidden) */}
               <div className="md:hidden space-y-2.5">
                 {/* Metric 1: ILR Rolling Peak */}
-                <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
+                <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-semibold text-slate-900 dark:text-slate-100">
                     <span>ILR Peak Rolling 12M</span>
                     <span className="font-mono text-slate-400">Limit: 180d</span>
@@ -310,7 +310,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
                 </div>
 
                 {/* Metric 2: Naturalisation 5-Year */}
-                <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
+                <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-semibold text-slate-900 dark:text-slate-100">
                     <span>Naturalisation 5-Year</span>
                     <span className="font-mono text-slate-400">Limit: 450d</span>
@@ -332,7 +332,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
                 </div>
 
                 {/* Metric 3: Naturalisation Final 12M */}
-                <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
+                <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-semibold text-slate-900 dark:text-slate-100">
                     <span>Naturalisation Final 12M</span>
                     <span className="font-mono text-slate-400">Limit: 90d</span>
@@ -358,7 +358,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               <div className="hidden md:block overflow-x-auto">
                 <table className="w-full text-xs text-left">
                   <thead>
-                    <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 font-semibold">
+                    <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-700/60 text-slate-500 dark:text-slate-400 font-semibold">
                       <th className="py-2.5 px-3">Statutory Metric</th>
                       <th className="py-2.5 px-3 text-center">Current Total</th>
                       <th className="py-2.5 px-3 text-center">Simulated Total</th>

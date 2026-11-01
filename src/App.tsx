@@ -145,7 +145,7 @@ export const App: React.FC = () => {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         {/* Top Header Bar */}
-        <header className="hidden lg:flex items-center justify-between px-8 py-3.5 bg-white/90 dark:bg-[#111C38]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-700/60 shrink-0 z-30 shadow-2xl fixed top-0 left-[16rem] right-0 transition-colors">
+        <header className="hidden lg:flex items-center justify-between px-8 py-3.5 bg-white/90 dark:bg-[#0B132B]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-700/60 shrink-0 z-30 shadow-2xl fixed top-0 left-[16rem] right-0 transition-colors">
           <div className="flex items-center gap-3">
             <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 uppercase tracking-wider">
               {currentTab.replace('_', ' ')}

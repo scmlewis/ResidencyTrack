@@ -385,7 +385,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
             <thead>
-              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 font-semibold">
+              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/60 text-slate-600 dark:text-slate-400 font-semibold">
                 <th className="py-2.5 px-3">Rule & Category</th>
                 <th className="py-2.5 px-3">Threshold</th>
                 <th className="py-2.5 px-3">Counting Method</th>
@@ -458,7 +458,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
             </div>
             <div className="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden divide-y divide-slate-100 dark:divide-slate-800 text-xs">
               {testResults.map((t) => (
-                <div key={t.id} className="p-2.5 flex items-center justify-between bg-white dark:bg-slate-800/60 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                <div key={t.id} className="p-2.5 flex items-center justify-between bg-white dark:bg-slate-700/60 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                   <div>
                     <span className="font-semibold text-slate-900 dark:text-slate-100">
                       {t.id}. {t.name}
@@ -475,7 +475,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
             </div>
           </div>
         ) : (
-          <div className="p-4 bg-slate-50 dark:bg-slate-800/40 border border-dashed border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-500 dark:text-slate-400 text-center">
+          <div className="p-4 bg-slate-50 dark:bg-slate-700/40 border border-dashed border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-500 dark:text-slate-400 text-center">
             Click "Run Calculation Tests" to execute the PRD compliance test cases live.
           </div>
         )}

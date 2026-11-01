@@ -110,7 +110,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
                 </div>
 
                 {/* Milestone Content */}
-                <div className="p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 rounded-xl hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
+                <div className="p-4 bg-slate-50 dark:bg-slate-700/50 border border-slate-200/80 dark:border-slate-700/80 rounded-xl hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2">
                       <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">{milestone.title}</h3>
@@ -163,7 +163,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
         </div>
 
         {/* Legal Disclaimer Box */}
-        <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-600 dark:text-slate-400 space-y-1">
+        <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-600 dark:text-slate-400 space-y-1">
           <div className="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
             <AlertCircle className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
             <span>Statutory Estimation Notice</span>

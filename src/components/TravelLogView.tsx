@@ -455,7 +455,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
         <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 font-semibold">
+              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-700/60 text-slate-500 dark:text-slate-400 font-semibold">
                 <th className="py-3 px-4">Dates & Duration</th>
                 <th className="py-3 px-4">Destination & Purpose</th>
                 <th className="py-3 px-4 text-center">Counting Breakdown</th>
@@ -599,7 +599,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs overflow-y-auto">
           <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-md overflow-hidden my-8 transition-colors">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/70">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/70">
               <h2 className="text-base font-bold text-slate-900 dark:text-slate-100">
                 {editingTrip ? 'Edit Overseas Trip' : 'Log Overseas Trip'}
               </h2>
@@ -707,7 +707,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
 
               {/* Counting preview */}
               {formData.departureDate && formData.returnDate && formData.departureDate <= formData.returnDate && (
-                <div className="p-2.5 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between font-mono">
+                <div className="p-2.5 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between font-mono">
                   <span>Counted Absence Days:</span>
                   <span className="font-bold text-slate-900 dark:text-slate-100">
                     {Math.max(0, (new Date(formData.returnDate).getTime() - new Date(formData.departureDate).getTime()) / 86400000 - 1)} days

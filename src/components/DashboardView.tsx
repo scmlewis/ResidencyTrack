@@ -317,9 +317,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <div>
             <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mb-1">
               <span className="font-semibold text-slate-700 dark:text-slate-300">ILR — 12M Rolling</span>
-              <span title="Appendix Continuous Residence CR 2.2: Maximum 180 days in any 12-month period">
-                <Info className="w-3.5 h-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-help" />
-              </span>
             </div>
             <div className="flex items-baseline gap-2 mt-0.5">
               <span className="text-xl sm:text-2xl font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
@@ -396,9 +393,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <div>
             <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mb-1">
               <span className="font-semibold text-slate-700 dark:text-slate-300">Naturalisation 5-Yr</span>
-              <span title="British Nationality Act 1981 Section 6(1): Maximum 450 absence days over 5 continuous years">
-                <Info className="w-3.5 h-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-help" />
-              </span>
             </div>
             <div className="flex items-baseline gap-1.5 sm:gap-2 mt-0.5">
               <span className="text-xl sm:text-2xl font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
@@ -425,9 +419,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <div>
             <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mb-1">
               <span className="font-semibold text-slate-700 dark:text-slate-300">Final 12 Months</span>
-              <span title="Form AN Guidance: Maximum 90 days absence in the final 12 months before applying for British citizenship">
-                <Info className="w-3.5 h-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-help" />
-              </span>
             </div>
             <div className="flex items-baseline gap-1.5 sm:gap-2 mt-0.5">
               <span className="text-xl sm:text-2xl font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
@@ -609,7 +600,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   return (
                     <div
                       key={trip.id}
-                      className="p-3 rounded-lg border border-slate-100 dark:border-slate-700/80 bg-slate-50/50 dark:bg-slate-800/40 hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors"
+                      className="p-3 rounded-lg border border-slate-100 dark:border-slate-700/80 bg-slate-50/50 dark:bg-slate-700/40 hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors"
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex items-center gap-1.5 font-semibold text-slate-900 dark:text-slate-100 text-xs">
@@ -736,7 +727,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                       ? 'bg-red-50 dark:bg-red-950/40 border-red-200 dark:border-red-800 text-red-900 dark:text-red-200'
                       : notice.type === 'warning'
                       ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-200'
-                      : 'bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
+                      : 'bg-slate-50 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
                   }`}
                 >
                   <div className="font-semibold mb-1 flex items-center gap-1.5">
