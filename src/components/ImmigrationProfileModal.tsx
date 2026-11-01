@@ -60,14 +60,14 @@ if (!isOpen && !fullPage) return null;
     ? 'w-full max-w-3xl mx-auto'
     : 'fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/70  overflow-y-auto';
   const innerClass = fullPage
-    ? 'bg-white dark:bg-slate-800 rounded-xl  border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors'
-    : 'bg-white dark:bg-slate-800 rounded-xl  border border-slate-200 dark:border-slate-700 w-full max-w-full sm:max-w-lg max-h-[90vh] overflow-y-auto my-4 sm:my-8 transition-colors';
+    ? 'bg-transparent transition-colors'
+    : 'bg-white dark:bg-slate-900 rounded-xl  border border-slate-200 dark:border-slate-700 w-full max-w-full sm:max-w-lg max-h-[90vh] overflow-y-auto my-4 sm:my-8 transition-colors';
 
   return (
     <div className={outerClass}>
       <div className={innerClass}>
         {/* Header */}
-        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/70">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/70">
           <div>
             <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Immigration Profile</h2>
             <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
@@ -100,7 +100,7 @@ if (!isOpen && !fullPage) return null;
               type="text"
               disabled
               value="British National (Overseas) , Standard 5-Year Settlement"
-              className="w-full px-3 py-2 text-xs bg-slate-100 dark:bg-slate-700/80 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 cursor-not-allowed font-medium"
+              className="w-full px-3 py-2 text-xs bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 cursor-not-allowed font-medium"
             />
           </div>
 

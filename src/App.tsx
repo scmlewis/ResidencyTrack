@@ -186,7 +186,7 @@ export const App: React.FC = () => {
         </header>
 
         {/* View Content Viewport */}
-        <main className="flex-1 p-3 sm:p-6 lg:p-8 pt-16 sm:pt-6 lg:pt-16 lg:pl-[16rem] pb-24 sm:pb-6 lg:pb-8 max-w-7xl w-full mx-auto min-w-0 overflow-x-auto">
+        <main key={currentTab} className="flex-1 p-3 sm:p-6 lg:p-8 pt-16 sm:pt-6 lg:pt-16 lg:pl-[16rem] pb-24 sm:pb-6 lg:pb-8 max-w-7xl w-full mx-auto min-w-0 overflow-x-auto fade-in-tab">
           {currentTab === 'dashboard' && (
             <DashboardView
               profile={profile}

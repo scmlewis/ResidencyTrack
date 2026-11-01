@@ -128,7 +128,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
@@ -166,7 +166,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Input Parameters Form (1 col) */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs flex flex-col justify-between transition-colors">
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs flex flex-col justify-between transition-colors">
           <form onSubmit={handleSimulate} className="space-y-4">
             <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <SlidersHorizontal className="w-4 h-4 text-teal-600 dark:text-teal-400" />
@@ -249,7 +249,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
         {/* Simulation Impact Results (2 cols) */}
         <div className="lg:col-span-2 space-y-4">
           {simulationResult ? (
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs space-y-6 transition-colors">
+            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs space-y-6 transition-colors">
               {/* Breach banner or safe banner */}
               {simulationResult.createsThresholdBreach ? (
                 <div className="p-4 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 rounded-xl text-xs text-red-900 dark:text-red-200 flex items-start gap-3">
@@ -278,7 +278,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               )}
 
               {/* Trip Counted Days Summary */}
-              <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs flex items-center justify-between">
+              <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs flex items-center justify-between">
                 <span className="text-slate-600 dark:text-slate-300">Simulated Whole Days Outside UK:</span>
                 <span className="font-bold text-slate-900 dark:text-slate-100 text-sm">
                   +{simulationResult.simulatedTripAbsenceDays} days
@@ -288,7 +288,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               {/* Mobile Comparison Cards (md:hidden) */}
               <div className="md:hidden space-y-2.5">
                 {/* Metric 1: ILR Rolling Peak */}
-                <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
+                <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-semibold text-slate-900 dark:text-slate-100">
                     <span>ILR Peak Rolling 12M</span>
                     <span className="text-slate-400">Limit: 180d</span>
@@ -310,7 +310,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
                 </div>
 
                 {/* Metric 2: Naturalisation 5-Year */}
-                <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
+                <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-semibold text-slate-900 dark:text-slate-100">
                     <span>Naturalisation 5-Year</span>
                     <span className="text-slate-400">Limit: 450d</span>
@@ -332,7 +332,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
                 </div>
 
                 {/* Metric 3: Naturalisation Final 12M */}
-                <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
+                <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-lg space-y-1.5">
                   <div className="flex items-center justify-between text-xs font-semibold text-slate-900 dark:text-slate-100">
                     <span>Naturalisation Final 12M</span>
                     <span className="text-slate-400">Limit: 90d</span>
@@ -358,7 +358,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               <div className="hidden md:block overflow-x-auto">
                 <table className="w-full text-xs text-left">
                   <thead>
-                    <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-700/60 text-slate-500 dark:text-slate-300 font-semibold">
+                    <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-800/60 text-slate-500 dark:text-slate-300 font-semibold">
                       <th className="py-2.5 px-3">Statutory Metric</th>
                       <th className="py-2.5 px-3 text-center">Current Total</th>
                       <th className="py-2.5 px-3 text-center">Simulated Total</th>
@@ -463,7 +463,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               </div>
             </div>
           ) : (
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-12 text-center text-xs text-slate-400 dark:text-slate-500 transition-colors">
+            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-12 text-center text-xs text-slate-400 dark:text-slate-500 transition-colors">
               Enter proposed travel dates on the left and click "Run Simulation" to inspect compliance impact.
             </div>
           )}

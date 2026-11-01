@@ -140,7 +140,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
   return (
     <div className="space-y-6">
       {/* Header and Controls */}
-      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Interactive Calendar</h1>
@@ -224,7 +224,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
       {/* Calendar Grid + Inspector Split */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Calendar Grid (2 cols) */}
-        <div className="lg:col-span-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
+        <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
           <div className="grid grid-cols-7 gap-1 text-center font-semibold text-xs text-slate-400 dark:text-slate-500 mb-2">
             <div>Mon</div>
             <div>Tue</div>
@@ -238,7 +238,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
           <div className="grid grid-cols-7 gap-1.5">
             {/* Blank cells before start of month */}
             {Array.from({ length: daysData.firstDayOfWeek }).map((_, i) => (
-              <div key={`blank-${i}`} className="h-16 md:h-20 bg-slate-50/40 dark:bg-slate-700/30 rounded-lg border border-transparent" />
+              <div key={`blank-${i}`} className="h-16 md:h-20 bg-slate-50/40 dark:bg-slate-800/30 rounded-lg border border-transparent" />
             ))}
 
             {/* Days of current month */}
@@ -247,7 +247,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
               const hasTrips = dayObj.activeTrips.length > 0;
               const hasMilestone = dayObj.milestones.length > 0;
 
-              let bgClasses = 'bg-white dark:bg-slate-700/50 hover:bg-slate-50 dark:hover:bg-slate-800 border-slate-200/70 dark:border-slate-700/80 text-slate-700 dark:text-slate-300';
+              let bgClasses = 'bg-white dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800 border-slate-200/70 dark:border-slate-700/80 text-slate-700 dark:text-slate-300';
               if (dayObj.category === 'completed_travel') {
                 bgClasses = 'bg-blue-50/80 dark:bg-blue-950/40 border-blue-200 dark:border-blue-800/80 text-blue-900 dark:text-blue-300';
               } else if (dayObj.category === 'planned_travel') {
@@ -291,7 +291,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
         </div>
 
         {/* Selected Date Inspector (1 col) */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs flex flex-col justify-between transition-colors">
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs flex flex-col justify-between transition-colors">
           <div>
             <div className="flex items-center gap-2 pb-3 mb-4 border-b border-slate-100 dark:border-slate-700">
               <CalendarIcon className="w-4 h-4 text-teal-600 dark:text-teal-400" />
@@ -322,7 +322,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                       Active Overseas Travel
                     </div>
                     {selectedDetails.trips.map(trip => (
-                      <div key={trip.id} className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg space-y-2 text-xs">
+                      <div key={trip.id} className="p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-lg space-y-2 text-xs">
                         <div className="flex items-center justify-between">
                           <span className="font-bold text-slate-900 dark:text-slate-100">{trip.destination}</span>
                           <span
@@ -356,7 +356,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                     ))}
                   </div>
                 ) : (
-                  <div className="p-4 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-600 dark:text-slate-300 space-y-1">
+                  <div className="p-4 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-600 dark:text-slate-300 space-y-1">
                     <div className="font-semibold text-slate-800 dark:text-slate-200">Physically in the United Kingdom</div>
                     <p className="text-[11px] text-slate-500 dark:text-slate-300">
                       No overseas travel recorded on this calendar day. Counts fully towards your qualifying continuous residence.

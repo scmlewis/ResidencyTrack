@@ -15,7 +15,7 @@ const steps = [
 export const TutorialView: React.FC = () => {
   return (
     <div className="space-y-4 sm:space-y-6">
-      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 md:p-6 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 md:p-6 shadow-xs transition-colors">
         <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Tutorial & Onboarding</h1>
         <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
           Follow these steps to get started with ResidencyTrack. You can revisit any section anytime from the navigation.
@@ -24,7 +24,7 @@ export const TutorialView: React.FC = () => {
 
       <ol className="space-y-3">
         {steps.map((s, i) => (
-          <li key={i} className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs transition-colors flex gap-4">
+          <li key={i} className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs transition-colors flex gap-4">
             <div className="shrink-0 w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center font-bold text-sm">
               {i + 1}
             </div>

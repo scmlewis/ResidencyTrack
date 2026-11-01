@@ -194,7 +194,7 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         <div className={`p-2 rounded-lg border ${
           tier === 'safe'
             ? 'bg-teal-50/80 dark:bg-teal-950/40 border-teal-300 dark:border-teal-700 font-semibold text-teal-900 dark:text-teal-200'
-            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
+            : 'bg-white/60 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
         }`}>
           <div className="flex items-center gap-1.5 mb-0.5">
             <span className="w-2 h-2 rounded-full bg-teal-500" />
@@ -208,7 +208,7 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         <div className={`p-2 rounded-lg border ${
           tier === 'warning_75'
             ? 'bg-amber-100/70 dark:bg-amber-950/40 border-amber-400 dark:border-amber-700 font-semibold text-amber-950 dark:text-amber-200 shadow-2xs'
-            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
+            : 'bg-white/60 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
         }`}>
           <div className="flex items-center gap-1.5 mb-0.5">
             <span className="w-2 h-2 rounded-full bg-amber-500" />
@@ -222,7 +222,7 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         <div className={`p-2 rounded-lg border ${
           tier === 'critical_90' || tier === 'breached_100'
             ? 'bg-orange-100/70 dark:bg-orange-950/40 border-orange-400 dark:border-orange-700 font-semibold text-orange-950 dark:text-orange-200 shadow-2xs'
-            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
+            : 'bg-white/60 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
         }`}>
           <div className="flex items-center gap-1.5 mb-0.5">
             <span className="w-2 h-2 rounded-full bg-red-600" />

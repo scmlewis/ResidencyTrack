@@ -208,7 +208,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   return (
     <div className="space-y-4 sm:space-y-6">
       {/* SECTION A: Welcome Header */}
-      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 md:p-6 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 md:p-6 shadow-xs transition-colors">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
           <div>
             <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mb-1">
@@ -305,7 +305,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* SECTION B: Compliance Summary Cards (Mobile 2-col, Desktop 4-col) */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
         {/* Card 1: ILR Rolling Absence with Color-Coded Multi-Tier Progress Bar */}
-        <div className={`col-span-2 sm:col-span-1 lg:col-span-1 bg-white dark:bg-slate-800 rounded-xl border p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors ${
+        <div className={`col-span-2 sm:col-span-1 lg:col-span-1 bg-white dark:bg-slate-900 rounded-xl border p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors ${
           capacityPct >= 100
             ? 'border-red-300 dark:border-red-700/80 ring-1 ring-red-200 dark:ring-red-900/40'
             : capacityPct >= 90
@@ -389,7 +389,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Card 2: Naturalisation 5-Year Absence */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
           <div>
             <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mb-1">
               <span className="font-semibold text-slate-700 dark:text-slate-300">Naturalisation 5-Yr</span>
@@ -415,7 +415,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Card 3: Naturalisation Final 12 Months */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
           <div>
             <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mb-1">
               <span className="font-semibold text-slate-700 dark:text-slate-300">Final 12 Months</span>
@@ -441,7 +441,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Card 4: Next Milestone */}
-        <div className="col-span-2 sm:col-span-1 lg:col-span-1 bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
+        <div className="col-span-2 sm:col-span-1 lg:col-span-1 bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
           <div>
             <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mb-1">
               <span className="font-semibold text-slate-700 dark:text-slate-300">Next Milestone</span>
@@ -479,7 +479,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       </div>
 
       {/* SECTION C: Absence Trend Chart */}
-      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 sm:mb-4">
           <div>
             <h2 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">
@@ -573,7 +573,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* Two Column Layout: Recent Travel (Left) & Important Notices (Right) */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* SECTION D: Recent Travel (2 cols) */}
-        <div className="lg:col-span-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs transition-colors">
+        <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs transition-colors">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <div>
               <h2 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">Recent Overseas Travel</h2>
@@ -600,7 +600,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   return (
                     <div
                       key={trip.id}
-                      className="p-3 rounded-lg border border-slate-100 dark:border-slate-700/80 bg-slate-50/50 dark:bg-slate-700/40 hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors"
+                      className="p-3 rounded-lg border border-slate-100 dark:border-slate-700/80 bg-slate-50/50 dark:bg-slate-800/40 hover:bg-slate-50 dark:hover:bg-slate-800/70 transition-colors"
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex items-center gap-1.5 font-semibold text-slate-900 dark:text-slate-100 text-xs">
@@ -711,7 +711,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* SECTION E: Important Notices & Compliance (1 col) */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
           <div>
             <div className="flex items-center justify-between mb-3 sm:mb-4">
               <h2 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">Important Notices</h2>
@@ -727,7 +727,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                       ? 'bg-red-50 dark:bg-red-950/40 border-red-200 dark:border-red-800 text-red-900 dark:text-red-200'
                       : notice.type === 'warning'
                       ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-200'
-                      : 'bg-slate-50 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
+                      : 'bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
                   }`}
                 >
                   <div className="font-semibold mb-1 flex items-center gap-1.5">

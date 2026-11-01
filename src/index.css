@@ -26,3 +26,11 @@
     font-family: 'JetBrains Mono', monospace;
   }
 }
+
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-tab {
+  animation: fadeInTab 0.25s ease-out;
+}

@@ -111,7 +111,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Header and Route Tabs */}
-      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
@@ -123,12 +123,12 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
           </div>
 
           {/* Route Selector Tabs */}
-          <div className="w-full sm:w-auto grid grid-cols-2 sm:flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-700/80 rounded-lg border border-slate-200 dark:border-slate-700">
+          <div className="w-full sm:w-auto grid grid-cols-2 sm:flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-lg border border-slate-200 dark:border-slate-700">
             <button
               onClick={() => setActiveTab('ilr')}
               className={`px-3 py-1.5 text-xs font-semibold rounded-md text-center transition-colors ${
                 activeTab === 'ilr'
-                  ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 shadow-xs'
+                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 shadow-xs'
                   : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-200'
               }`}
             >
@@ -138,7 +138,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
               onClick={() => setActiveTab('naturalisation')}
               className={`px-3 py-1.5 text-xs font-semibold rounded-md text-center transition-colors ${
                 activeTab === 'naturalisation'
-                  ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 shadow-xs'
+                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 shadow-xs'
                   : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-200'
               }`}
             >
@@ -152,7 +152,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
         /* ILR CONTINUOUS RESIDENCE SECTION */
         <div className="space-y-4 sm:space-y-6">
           {/* Main Peak Window Evaluation Card */}
-          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-6 shadow-xs transition-colors">
+          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-6 shadow-xs transition-colors">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 sm:pb-6 border-b border-slate-100 dark:border-slate-700">
               <div>
                 <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-300 font-semibold tracking-wider mb-0.5">
@@ -230,7 +230,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 {/* Mobile View */}
                 <div className="md:hidden space-y-2">
                   {ilrResult.peakWindow.tripsInWindow.map((t, i) => (
-                    <div key={i} className="p-2.5 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-700/40 text-xs flex items-center justify-between">
+                    <div key={i} className="p-2.5 rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/40 text-xs flex items-center justify-between">
                       <div>
                         <div className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
                           <MapPin className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
@@ -280,7 +280,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
           </div>
 
           {/* Rule Methodology & Official Guidance */}
-          <div className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 text-xs space-y-3 transition-colors">
+          <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5 text-xs space-y-3 transition-colors">
             <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-slate-100">
               <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
               <span>Official Appendix Continuous Residence Counting Methodology</span>
@@ -306,7 +306,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* 5-Year Requirement */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs flex flex-col justify-between transition-colors">
+            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs flex flex-col justify-between transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs text-slate-500 dark:text-slate-300 font-semibold">
@@ -356,7 +356,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
             </div>
 
             {/* Final 12 Months Requirement */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs flex flex-col justify-between transition-colors">
+            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs flex flex-col justify-between transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs text-slate-500 dark:text-slate-300 font-semibold">
@@ -407,7 +407,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
           </div>
 
           {/* Physical Presence on Day 1 Check Card */}
-          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
+          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
             <div className="flex items-start gap-3">
               <div
                 className={`p-2 rounded-lg shrink-0 ${
@@ -451,7 +451,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
 
           {/* Year-by-Year Breakdown */}
           {yearlyBreakdown.length > 0 && (
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
+            <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
               <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-3">
                 Year-by-Year Absence Breakdown
               </h3>
@@ -459,7 +459,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 {yearlyBreakdown.map((y, idx) => (
                   <div
                     key={y.yearIndex}
-                    className={`p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg ${
+                    className={`p-3 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-lg ${
                       idx === 4 ? 'col-span-2 sm:col-span-1' : ''
                     }`}
                   >

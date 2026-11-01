@@ -49,7 +49,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs transition-colors">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Immigration Timeline</h1>
@@ -83,7 +83,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
       </div>
 
       {/* Timeline Journey Card */}
-      <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs transition-colors">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs transition-colors">
         <div className="relative border-l-2 border-slate-200 dark:border-slate-700 ml-4 md:ml-6 space-y-8 py-2">
           {milestones.map((milestone, idx) => {
             const isCompleted = milestone.completed;
@@ -110,7 +110,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
                 </div>
 
                 {/* Milestone Content */}
-                <div className="p-4 bg-slate-50 dark:bg-slate-700/50 border border-slate-200/80 dark:border-slate-700/80 rounded-xl hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
+                <div className="p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 rounded-xl hover:border-slate-300 dark:hover:border-slate-600 transition-colors">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2">
                       <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">{milestone.title}</h3>
@@ -163,7 +163,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
         </div>
 
         {/* Legal Disclaimer Box */}
-        <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-600 dark:text-slate-300 space-y-1">
+        <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-600 dark:text-slate-300 space-y-1">
           <div className="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
             <AlertCircle className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
             <span>Statutory Estimation Notice</span>
