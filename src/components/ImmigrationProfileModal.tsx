@@ -55,10 +55,10 @@ export const ImmigrationProfileModal: React.FC<ImmigrationProfileModalProps> = (
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs overflow-y-auto">
-      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-lg overflow-hidden my-8 transition-colors">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/70 backdrop-blur-xs overflow-y-auto">
+      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-full sm:max-w-lg max-h-[90vh] overflow-y-auto my-4 sm:my-8 transition-colors">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/70">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/70">
           <div>
             <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Immigration Profile</h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -74,7 +74,7 @@ export const ImmigrationProfileModal: React.FC<ImmigrationProfileModalProps> = (
         </div>
 
         {/* Content Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-5">
+        <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-5">
           {error && (
             <div className="p-3 bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-900 rounded-lg flex items-start gap-2.5 text-xs text-red-700 dark:text-red-300">
               <ShieldAlert className="w-4 h-4 shrink-0 text-red-500 mt-0.5" />
