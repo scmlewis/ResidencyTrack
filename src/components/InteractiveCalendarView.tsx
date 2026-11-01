@@ -165,7 +165,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
               <select
                 value={currentYear}
                 onChange={e => setCurrentYear(Number(e.target.value))}
-                className="px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 font-mono"
+                className="px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
               >
                 {[2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028].map(y => (
                   <option key={y} value={y}>{y}</option>
@@ -203,7 +203,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
             <span className="text-slate-600 dark:text-slate-300">Completed Overseas Travel</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-xs bg-purple-100 dark:bg-purple-950/60 border border-purple-300 dark:border-purple-800" />
+            <span className="w-3 h-3 rounded-xs bg-teal-100 dark:bg-teal-950/60 border border-teal-300 dark:border-teal-800" />
             <span className="text-slate-600 dark:text-slate-300">Planned Travel</span>
           </div>
           <div className="flex items-center gap-1.5">
@@ -214,7 +214,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
             <span className="w-2 h-2 rounded-full bg-amber-500" />
             <span className="text-slate-600 dark:text-slate-300">Immigration Milestone</span>
           </div>
-          <div className="ml-auto text-xs font-mono text-slate-500 dark:text-slate-300">
+          <div className="ml-auto text-xs text-slate-500 dark:text-slate-300">
             Monthly Absence:{' '}
             <strong className="text-slate-900 dark:text-slate-100 font-bold">{monthlyAbsenceDays} days</strong>
           </div>
@@ -251,7 +251,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
               if (dayObj.category === 'completed_travel') {
                 bgClasses = 'bg-blue-50/80 dark:bg-blue-950/40 border-blue-200 dark:border-blue-800/80 text-blue-900 dark:text-blue-300';
               } else if (dayObj.category === 'planned_travel') {
-                bgClasses = 'bg-purple-50/80 dark:bg-purple-950/40 border-purple-200 dark:border-purple-800/80 text-purple-900 dark:text-purple-300';
+                bgClasses = 'bg-teal-50/80 dark:bg-teal-950/40 border-teal-200 dark:border-teal-800/80 text-teal-900 dark:text-teal-300';
               } else if (dayObj.category === 'boundary_day') {
                 bgClasses = 'bg-teal-50/80 dark:bg-teal-950/40 border-teal-200 dark:border-teal-800/80 text-teal-900 dark:text-teal-300';
               }
@@ -264,10 +264,10 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                 <button
                   key={dayObj.isoDate}
                   onClick={() => setSelectedDate(dayObj.isoDate)}
-                  className={`h-16 md:h-20 p-1.5 rounded-lg border text-left flex flex-col justify-between transition-all ${bgClasses}`}
+                  className={`h-16 md:h-20 p-1.5 rounded-lg border text-left flex flex-col justify-between transition-[transform,opacity] ${bgClasses}`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono tabular-nums">{dayObj.day}</span>
+                    <span className="text-xs tabular-nums">{dayObj.day}</span>
                     {hasMilestone && (
                       <span className="w-2 h-2 rounded-full bg-amber-500" title="Immigration Milestone" />
                     )}
@@ -318,7 +318,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                 {/* Trips on Date */}
                 {selectedDetails.trips.length > 0 ? (
                   <div className="space-y-3">
-                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-300 uppercase tracking-wider">
+                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-300 ">
                       Active Overseas Travel
                     </div>
                     {selectedDetails.trips.map(trip => (
@@ -329,7 +329,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                             className={`px-2 py-0.5 text-[10px] font-semibold rounded-md ${
                               trip.status === 'completed'
                                 ? 'bg-blue-100 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 dark:border dark:border-blue-800/40'
-                                : 'bg-purple-100 text-purple-800 dark:bg-purple-950/60 dark:text-purple-300 dark:border dark:border-purple-800/40'
+                                : 'bg-teal-100 text-teal-800 dark:bg-teal-950/60 dark:text-teal-300 dark:border dark:border-teal-800/40'
                             }`}
                           >
                             {trip.status === 'completed' ? 'Completed' : 'Planned'}
@@ -338,7 +338,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                         <div className="text-slate-600 dark:text-slate-300">
                           {trip.purpose}
                         </div>
-                        <div className="text-slate-500 dark:text-slate-300 font-mono text-[11px]">
+                        <div className="text-slate-500 dark:text-slate-300 text-[11px]">
                           {formatDisplayDate(trip.departureDate)} → {formatDisplayDate(trip.returnDate)}
                         </div>
 

@@ -52,7 +52,7 @@ export const AboutView: React.FC = () => {
         <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-2">Disclaimer</h2>
         <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
           ResidencyTrack is an independent planning aid. It is not affiliated with the UK Home Office and does not
-          constitute immigration or legal advice. Statutory rules may change — always confirm current requirements on
+          constitute immigration or legal advice. Statutory rules may change , always confirm current requirements on
           <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 hover:underline ml-1">
             gov.uk
           </a>

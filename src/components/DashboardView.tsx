@@ -216,7 +216,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <span aria-hidden="true">·</span>
               <span>5-Year Settlement</span>
               <span aria-hidden="true" className="hidden xs:inline">·</span>
-              <span className="hidden xs:inline font-mono">{formatDisplayDate('2026-11-01')}</span>
+              <span className="hidden xs:inline">{formatDisplayDate('2026-11-01')}</span>
             </div>
             <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Immigration Compliance Overview
@@ -316,16 +316,16 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         }`}>
           <div>
             <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mb-1">
-              <span className="font-semibold text-slate-700 dark:text-slate-300">ILR — 12M Rolling</span>
+              <span className="font-semibold text-slate-700 dark:text-slate-300">ILR , 12M Rolling</span>
             </div>
             <div className="flex items-baseline gap-2 mt-0.5">
-              <span className="text-2xl sm:text-3xl font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
+              <span className="text-2xl sm:text-3xl font-bold tabular-nums text-slate-900 dark:text-slate-100">
                 {activeILRResult.maxAbsenceCount}
               </span>
-              <span className="text-xs font-mono text-slate-500 dark:text-slate-300">/ 180 days</span>
+              <span className="text-xs text-slate-500 dark:text-slate-300">/ 180 days</span>
             </div>
             <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">
-              <span className="font-mono tabular-nums font-semibold text-slate-800 dark:text-slate-200">
+              <span className="tabular-nums font-semibold text-slate-800 dark:text-slate-200">
                 {activeILRResult.remainingAllowance}
               </span>{' '}
               days remaining
@@ -333,7 +333,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
             {/* COLOR-CODED PROGRESS BAR FOR 75%, 90%, AND 100% CAPACITY */}
             <div className="mt-2.5 space-y-1">
-              <div className="flex justify-between items-center text-[10px] sm:text-[11px] font-mono">
+              <div className="flex justify-between items-center text-[10px] sm:text-[11px]">
                 <span className="text-slate-500 dark:text-slate-300 font-sans">Capacity:</span>
                 <span className={`font-bold ${
                   capacityPct >= 100
@@ -349,9 +349,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
 
               {/* Progress Track with visual indicator lines */}
-              <div className="relative w-full bg-slate-100 dark:bg-slate-900 h-2.5 sm:h-3 rounded-full overflow-hidden shadow-inner">
+              <div className="relative w-full bg-slate-100 dark:bg-slate-900 h-2.5 sm:h-3 rounded-full overflow-hidden ">
                 <div
-                  className={`h-full rounded-full transition-all duration-300 ${cardBarColor}`}
+                  className={`h-full rounded-full transition-[transform,opacity] duration-300 ${cardBarColor}`}
                   style={{ width: `${Math.min(100, Math.max(3, capacityPct))}%` }}
                 />
                 {/* 75% tick marker */}
@@ -369,7 +369,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
 
               {/* Threshold Ticks */}
-              <div className="flex justify-between text-[9px] sm:text-[10px] text-slate-400 dark:text-slate-500 font-mono pt-0.5">
+              <div className="flex justify-between text-[9px] sm:text-[10px] text-slate-400 dark:text-slate-500 pt-0.5">
                 <span>0d</span>
                 <span className={capacityPct >= 75 ? 'text-amber-700 dark:text-amber-400 font-bold' : ''}>75%</span>
                 <span className={capacityPct >= 90 ? 'text-orange-700 dark:text-orange-400 font-bold' : ''}>90%</span>
@@ -381,7 +381,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs">
             {renderStatusText(activeILRResult.status, activeILRResult.maxAbsenceCount)}
             {activeILRResult.peakWindow && (
-              <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500">
+              <span className="text-[10px] text-slate-400 dark:text-slate-500">
                 Peak: {activeILRResult.peakWindow.startDate.slice(2)}
               </span>
             )}
@@ -395,13 +395,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <span className="font-semibold text-slate-700 dark:text-slate-300">Naturalisation 5-Yr</span>
             </div>
             <div className="flex items-baseline gap-1.5 sm:gap-2 mt-0.5">
-              <span className="text-2xl sm:text-3xl font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
+              <span className="text-2xl sm:text-3xl font-bold tabular-nums text-slate-900 dark:text-slate-100">
                 {natResult.fiveYearAbsenceDays}
               </span>
-              <span className="text-[10px] sm:text-xs font-mono text-slate-500 dark:text-slate-300">/ 450d</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-300">/ 450d</span>
             </div>
             <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">
-              <span className="font-mono tabular-nums font-semibold text-slate-800 dark:text-slate-200">
+              <span className="tabular-nums font-semibold text-slate-800 dark:text-slate-200">
                 {natResult.fiveYearRemainingAllowance}
               </span>{' '}
               days left
@@ -410,7 +410,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs">
             {renderStatusText(natResult.fiveYearStatus)}
-            <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500 hidden sm:inline">5-Yr Total</span>
+            <span className="text-[10px] text-slate-400 dark:text-slate-500 hidden sm:inline">5-Yr Total</span>
           </div>
         </div>
 
@@ -421,13 +421,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <span className="font-semibold text-slate-700 dark:text-slate-300">Final 12 Months</span>
             </div>
             <div className="flex items-baseline gap-1.5 sm:gap-2 mt-0.5">
-              <span className="text-2xl sm:text-3xl font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
+              <span className="text-2xl sm:text-3xl font-bold tabular-nums text-slate-900 dark:text-slate-100">
                 {natResult.final12MonthsAbsenceDays}
               </span>
-              <span className="text-[10px] sm:text-xs font-mono text-slate-500 dark:text-slate-300">/ 90d</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-300">/ 90d</span>
             </div>
             <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">
-              <span className="font-mono tabular-nums font-semibold text-slate-800 dark:text-slate-200">
+              <span className="tabular-nums font-semibold text-slate-800 dark:text-slate-200">
                 {natResult.final12MonthsRemainingAllowance}
               </span>{' '}
               days left
@@ -436,12 +436,12 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs">
             {renderStatusText(natResult.final12MonthsStatus)}
-            <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500 hidden sm:inline">Final Year</span>
+            <span className="text-[10px] text-slate-400 dark:text-slate-500 hidden sm:inline">Final Year</span>
           </div>
         </div>
 
         {/* Card 4: Next Milestone */}
-        <div className="col-span-2 sm:col-span-1 lg:col-span-1 bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-5 shadow-xs flex flex-col justify-between bg-gradient-to-br from-white dark:from-slate-900 to-slate-50/50 dark:to-slate-800/50 transition-colors">
+        <div className="col-span-2 sm:col-span-1 lg:col-span-1 bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-3 sm:p-5 shadow-xs flex flex-col justify-between transition-colors">
           <div>
             <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 dark:text-slate-300 mb-1">
               <span className="font-semibold text-slate-700 dark:text-slate-300">Next Milestone</span>
@@ -451,14 +451,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div className="text-sm font-bold text-slate-900 dark:text-slate-100 truncate">
                 {nextMilestone?.title || '5-Year Settlement'}
               </div>
-              <div className="text-xs font-mono tabular-nums text-slate-600 dark:text-slate-300 mt-0.5">
+              <div className="text-xs tabular-nums text-slate-600 dark:text-slate-300 mt-0.5">
                 {formatDisplayDate(nextMilestone?.date)}
               </div>
             </div>
             <div className="mt-1.5 text-xs text-teal-700 dark:text-teal-400 font-medium">
               {nextMilestone?.daysRemaining !== undefined ? (
                 <span>
-                  <strong className="font-mono tabular-nums">{nextMilestone.daysRemaining}</strong> days to opening
+                  <strong className="tabular-nums">{nextMilestone.daysRemaining}</strong> days to opening
                 </span>
               ) : (
                 'Estimated projection'
@@ -521,7 +521,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <YAxis
                   domain={[0, 200]}
                   ticks={[0, 50, 100, 150, 180]}
-                  tick={{ fontSize: 10, fill: '#94A3B8', fontFamily: 'JetBrains Mono' }}
+                  tick={{ fontSize: 10, fill: '#94A3B8', fontFamily: 'inherit' }}
                   tickLine={false}
                 />
                 <Tooltip
@@ -529,15 +529,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     if (active && payload && payload.length) {
                       const data = payload[0].payload;
                       return (
-                        <div className="bg-slate-900 border border-slate-700 text-white p-2.5 rounded-lg shadow-lg text-xs space-y-1">
+                        <div className="bg-slate-900 border border-slate-700 text-white p-2.5 rounded-lg  text-xs space-y-1">
                           <div className="font-semibold text-teal-300">
                             Window Starting: {data.displayLabel}
                           </div>
                           <div>
-                            Absence: <span className="font-mono font-bold">{data.absenceDays} days</span>
+                            Absence: <span className="font-bold">{data.absenceDays} days</span>
                           </div>
                           <div className="text-slate-300">
-                            Remaining Allowance: <span className="font-mono">{data.remaining} days</span>
+                            Remaining Allowance: <span className="">{data.remaining} days</span>
                           </div>
                         </div>
                       );
@@ -612,7 +612,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                             trip.status === 'completed'
                               ? 'text-teal-700 dark:text-teal-300'
                               : trip.status === 'planned'
-                              ? 'text-purple-700 dark:text-purple-300'
+                              ? 'text-teal-700 dark:text-teal-300'
                               : 'text-amber-700 dark:text-amber-300'
                           }`}
                         >
@@ -625,10 +625,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                       </div>
 
                       <div className="mt-1.5 flex items-center justify-between text-xs text-slate-600 dark:text-slate-300">
-                        <div className="font-mono text-[11px] text-slate-500 dark:text-slate-300">
+                        <div className="text-[11px] text-slate-500 dark:text-slate-300">
                           {formatDisplayDate(trip.departureDate)} → {formatDisplayDate(trip.returnDate)}
                         </div>
-                        <div className="font-mono font-bold text-slate-900 dark:text-slate-100 text-right">
+                        <div className="font-bold text-slate-900 dark:text-slate-100 text-right">
                           {Math.round(days)} d <span className="font-normal text-[10px] text-slate-400">counted</span>
                         </div>
                       </div>
@@ -673,10 +673,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                               </div>
                             </div>
                           </td>
-                          <td className="py-2.5 font-mono text-slate-600 dark:text-slate-300 tabular-nums">
-                            {formatDisplayDate(trip.departureDate)} — {formatDisplayDate(trip.returnDate)}
+                          <td className="py-2.5 text-slate-600 dark:text-slate-300 tabular-nums">
+                            {formatDisplayDate(trip.departureDate)} , {formatDisplayDate(trip.returnDate)}
                           </td>
-                          <td className="py-2.5 text-right font-mono font-semibold text-slate-900 dark:text-slate-100 tabular-nums">
+                          <td className="py-2.5 text-right font-semibold text-slate-900 dark:text-slate-100 tabular-nums">
                             {Math.round(days)} d
                           </td>
                           <td className="py-2.5 text-right">
@@ -685,7 +685,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                                 trip.status === 'completed'
                                   ? 'text-teal-700 dark:text-teal-300'
                                   : trip.status === 'planned'
-                                  ? 'text-purple-700 dark:text-purple-300'
+                                  ? 'text-teal-700 dark:text-teal-300'
                                   : 'text-amber-700 dark:text-amber-300'
                               }`}
                             >

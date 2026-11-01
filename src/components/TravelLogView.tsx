@@ -255,25 +255,25 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 mt-4 pt-3 sm:mt-5 sm:pt-4 border-t border-slate-100 dark:border-slate-700 text-xs">
           <div>
             <span className="text-[11px] text-slate-400 dark:text-slate-500 block">Total Trips</span>
-            <span className="text-base sm:text-lg font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
+            <span className="text-base sm:text-lg font-bold tabular-nums text-slate-900 dark:text-slate-100">
               {stats.total}
             </span>
           </div>
           <div>
             <span className="text-[11px] text-slate-400 dark:text-slate-500 block">Completed</span>
-            <span className="text-base sm:text-lg font-bold font-mono tabular-nums text-teal-700 dark:text-teal-400">
+            <span className="text-base sm:text-lg font-bold tabular-nums text-teal-700 dark:text-teal-400">
               {stats.completedCount}
             </span>
           </div>
           <div>
             <span className="text-[11px] text-slate-400 dark:text-slate-500 block">Planned</span>
-            <span className="text-base sm:text-lg font-bold font-mono tabular-nums text-purple-700 dark:text-purple-400">
+            <span className="text-base sm:text-lg font-bold tabular-nums text-teal-700 dark:text-teal-400">
               {stats.plannedCount}
             </span>
           </div>
           <div>
             <span className="text-[11px] text-slate-400 dark:text-slate-500 block">Total Counted</span>
-            <span className="text-base sm:text-lg font-bold font-mono tabular-nums text-slate-900 dark:text-slate-100">
+            <span className="text-base sm:text-lg font-bold tabular-nums text-slate-900 dark:text-slate-100">
               {stats.totalAbsenceDays} <span className="text-xs font-normal text-slate-400">days</span>
             </span>
           </div>
@@ -377,7 +377,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
                           trip.status === 'completed'
                             ? 'text-teal-700 bg-teal-50 dark:bg-teal-950/60 dark:text-teal-300 border border-teal-200/50 dark:border-teal-800/40'
                             : trip.status === 'planned'
-                            ? 'text-purple-700 bg-purple-50 dark:bg-purple-950/60 dark:text-purple-300 border border-purple-200/50 dark:border-purple-800/40'
+                            ? 'text-teal-700 bg-teal-50 dark:bg-teal-950/60 dark:text-teal-300 border border-teal-200/50 dark:border-teal-800/40'
                             : 'text-amber-700 bg-amber-50 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200/50 dark:border-amber-800/40'
                         }`}
                       >
@@ -402,13 +402,13 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
 
                   {/* Dates & Counted Absences */}
                   <div className="flex items-center justify-between text-xs pt-0.5">
-                    <div className="font-mono text-slate-600 dark:text-slate-300 text-[11px]">
+                    <div className="text-slate-600 dark:text-slate-300 text-[11px]">
                       {formatDisplayDate(trip.departureDate)}
                       <span className="text-slate-400 dark:text-slate-500 mx-1">→</span>
                       {trip.returnDate ? formatDisplayDate(trip.returnDate) : 'Not returned'}
                     </div>
                     <div className="text-right">
-                      <span className="font-mono tabular-nums text-sm font-bold text-slate-900 dark:text-slate-100">
+                      <span className="tabular-nums text-sm font-bold text-slate-900 dark:text-slate-100">
                         {trip.naturalisationDays}
                       </span>
                       <span className="text-[10px] text-slate-500 dark:text-slate-300 ml-1">days absence</span>
@@ -483,7 +483,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
                       }`}
                     >
                       {/* Dates */}
-                      <td className="py-3 px-4 font-mono tabular-nums">
+                      <td className="py-3 px-4 tabular-nums">
                         <div className="font-semibold text-slate-900 dark:text-slate-100">
                           {formatDisplayDate(trip.departureDate)}
                           <span className="text-slate-400 dark:text-slate-500 mx-1.5">→</span>
@@ -526,7 +526,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
 
                       {/* Counting Rule Breakdown */}
                       <td className="py-3 px-4 text-center">
-                        <div className="text-[11px] text-slate-500 dark:text-slate-300 font-mono">
+                        <div className="text-[11px] text-slate-500 dark:text-slate-300">
                           Dep & Ret excluded
                         </div>
                         <div className="text-[10px] text-slate-400 dark:text-slate-500">
@@ -536,7 +536,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
 
                       {/* Counted Absence Days */}
                       <td className="py-3 px-4 text-right">
-                        <span className="font-mono tabular-nums text-sm font-bold text-slate-900 dark:text-slate-100">
+                        <span className="tabular-nums text-sm font-bold text-slate-900 dark:text-slate-100">
                           {trip.naturalisationDays}
                         </span>
                         <span className="text-[11px] text-slate-400 dark:text-slate-500 ml-1">days</span>
@@ -549,7 +549,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
                             trip.status === 'completed'
                               ? 'text-teal-700 bg-teal-50 dark:bg-teal-950/60 dark:text-teal-300 dark:border dark:border-teal-800/40'
                               : trip.status === 'planned'
-                              ? 'text-purple-700 bg-purple-50 dark:bg-purple-950/60 dark:text-purple-300 dark:border dark:border-purple-800/40'
+                              ? 'text-teal-700 bg-teal-50 dark:bg-teal-950/60 dark:text-teal-300 dark:border dark:border-teal-800/40'
                               : 'text-amber-700 bg-amber-50 dark:bg-amber-950/60 dark:text-amber-300 dark:border dark:border-amber-800/40'
                           }`}
                         >
@@ -597,8 +597,8 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
 
       {/* Add / Edit Trip Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs overflow-y-auto">
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-md overflow-hidden my-8 transition-colors">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70  overflow-y-auto">
+          <div className="bg-white dark:bg-slate-800 rounded-xl  border border-slate-200 dark:border-slate-700 w-full max-w-md overflow-hidden my-8 transition-colors">
             <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/70">
               <h2 className="text-base font-bold text-slate-900 dark:text-slate-100">
                 {editingTrip ? 'Edit Overseas Trip' : 'Log Overseas Trip'}
@@ -629,7 +629,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
                     required
                     value={formData.departureDate}
                     onChange={e => setFormData({ ...formData, departureDate: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg font-mono text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                    className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none"
                   />
                   <span className="text-[10px] text-slate-400 dark:text-slate-500 block mt-0.5">Date you left UK</span>
                 </div>
@@ -642,7 +642,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
                     type="date"
                     value={formData.returnDate}
                     onChange={e => setFormData({ ...formData, returnDate: e.target.value })}
-                    className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg font-mono text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                    className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-teal-500 focus:outline-none"
                   />
                   <span className="text-[10px] text-slate-400 dark:text-slate-500 block mt-0.5">Date you landed in UK</span>
                 </div>
@@ -707,7 +707,7 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
 
               {/* Counting preview */}
               {formData.departureDate && formData.returnDate && formData.departureDate <= formData.returnDate && (
-                <div className="p-2.5 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between font-mono">
+                <div className="p-2.5 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between">
                   <span>Counted Absence Days:</span>
                   <span className="font-bold text-slate-900 dark:text-slate-100">
                     {Math.max(0, (new Date(formData.returnDate).getTime() - new Date(formData.departureDate).getTime()) / 86400000 - 1)} days
@@ -737,8 +737,8 @@ export const TravelLogView: React.FC<TravelLogViewProps> = ({
 
       {/* Delete Confirmation Dialog */}
       {deleteConfirmId && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 ">
+          <div className="bg-white dark:bg-slate-800 rounded-xl  border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
             <div className="flex items-center gap-3 text-red-600 dark:text-red-400">
               <div className="p-2 bg-red-100 dark:bg-red-950/60 rounded-lg">
                 <Trash2 className="w-5 h-5 text-red-600 dark:text-red-400" />

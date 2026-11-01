@@ -125,7 +125,7 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
 
       {/* The Visual Color-Coded Capacity Bar */}
       <div className="space-y-1.5 pt-0.5">
-        <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono">
+        <div className="flex items-center justify-between text-[11px] sm:text-xs">
           <div className="flex items-center gap-1.5">
             <span className="text-slate-500 dark:text-slate-300 font-sans text-xs">Peak 12M:</span>
             <strong className="text-slate-900 dark:text-slate-100 text-xs sm:text-sm font-bold tabular-nums">
@@ -143,10 +143,10 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         </div>
 
         {/* Progress Bar Container with 75%, 90%, 100% Marker Lines */}
-        <div className="relative w-full bg-slate-200/90 dark:bg-slate-900 h-3 rounded-full overflow-hidden shadow-inner">
+        <div className="relative w-full bg-slate-200/90 dark:bg-slate-900 h-3 rounded-full overflow-hidden ">
           {/* Active progress fill */}
           <div
-            className={`h-full rounded-full transition-all duration-500 ${current.barColor}`}
+            className={`h-full rounded-full transition-[transform,opacity] duration-500 ${current.barColor}`}
             style={{ width: `${visualBarWidth}%` }}
           />
 
@@ -173,7 +173,7 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         </div>
 
         {/* Threshold Markers Legend Under the Bar */}
-        <div className="relative w-full text-[10px] text-slate-500 dark:text-slate-300 select-none font-mono">
+        <div className="relative w-full text-[10px] text-slate-500 dark:text-slate-300 select-none">
           <div className="flex justify-between items-center">
             <span>0d</span>
             <span className={maxAbsence >= 135 ? 'text-amber-700 dark:text-amber-400 font-bold' : ''}>

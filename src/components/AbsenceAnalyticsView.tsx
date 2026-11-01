@@ -155,7 +155,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-4 sm:p-6 shadow-xs transition-colors">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 sm:pb-6 border-b border-slate-100 dark:border-slate-700">
               <div>
-                <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-300 uppercase font-semibold tracking-wider mb-0.5">
+                <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-300 font-semibold tracking-wider mb-0.5">
                   Appendix Continuous Residence CR 2.2
                 </div>
                 <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
@@ -172,14 +172,14 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
               <div>
                 <span className="text-xs text-slate-400 dark:text-slate-500 block mb-1">Highest 12M Absence Count</span>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl sm:text-3xl font-extrabold font-mono tabular-nums text-slate-900 dark:text-slate-100">
+                  <span className="text-2xl sm:text-3xl font-extrabold tabular-nums text-slate-900 dark:text-slate-100">
                     {ilrResult.maxAbsenceCount}
                   </span>
-                  <span className="text-xs font-mono text-slate-500 dark:text-slate-300">/ 180 days limit</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-300">/ 180 days limit</span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full mt-2.5 overflow-hidden">
                   <div
-                    className={`h-full rounded-full transition-all ${
+                    className={`h-full rounded-full transition-[transform,opacity] ${
                       ilrResult.maxAbsenceCount > 180
                         ? 'bg-red-500'
                         : ilrResult.maxAbsenceCount >= 150
@@ -193,7 +193,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
 
               <div>
                 <span className="text-xs text-slate-400 dark:text-slate-500 block mb-1">Remaining Safe Allowance</span>
-                <div className="text-2xl sm:text-3xl font-extrabold font-mono tabular-nums text-teal-700 dark:text-teal-400">
+                <div className="text-2xl sm:text-3xl font-extrabold tabular-nums text-teal-700 dark:text-teal-400">
                   {ilrResult.remainingAllowance}
                   <span className="text-xs font-sans font-normal text-slate-500 dark:text-slate-300 ml-1.5">days</span>
                 </div>
@@ -206,11 +206,11 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 <span className="text-xs text-slate-400 dark:text-slate-500 block mb-1">Peak 12-Month Date Window</span>
                 {ilrResult.peakWindow ? (
                   <div className="space-y-0.5 sm:space-y-1">
-                    <div className="font-mono text-xs font-bold text-slate-900 dark:text-slate-100 tabular-nums">
+                    <div className="text-xs font-bold text-slate-900 dark:text-slate-100 tabular-nums">
                       {formatDisplayDate(ilrResult.peakWindow.startDate)}
                     </div>
                     <div className="text-[10px] text-slate-400 dark:text-slate-500">until</div>
-                    <div className="font-mono text-xs font-bold text-slate-900 dark:text-slate-100 tabular-nums">
+                    <div className="text-xs font-bold text-slate-900 dark:text-slate-100 tabular-nums">
                       {formatDisplayDate(ilrResult.peakWindow.endDate)}
                     </div>
                   </div>
@@ -223,7 +223,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
             {/* Contributing Trips to Peak Window */}
             {ilrResult.peakWindow && ilrResult.peakWindow.tripsInWindow.length > 0 && (
               <div className="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-slate-100 dark:border-slate-700">
-                <h3 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3">
+                <h3 className="text-xs font-bold text-slate-800 dark:text-slate-200  mb-3">
                   Trips Contributing to Peak 12-Month Window ({ilrResult.peakWindow.tripsInWindow.length})
                 </h3>
 
@@ -236,11 +236,11 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                           <MapPin className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
                           <span>{t.destination}</span>
                         </div>
-                        <div className="font-mono text-[11px] text-slate-500 dark:text-slate-300 mt-0.5">
+                        <div className="text-[11px] text-slate-500 dark:text-slate-300 mt-0.5">
                           {formatDisplayDate(t.startDate)} → {formatDisplayDate(t.endDate)}
                         </div>
                       </div>
-                      <div className="text-right font-mono font-bold text-slate-900 dark:text-slate-100">
+                      <div className="text-right font-bold text-slate-900 dark:text-slate-100">
                         {t.overlappingDays} d
                       </div>
                     </div>
@@ -264,10 +264,10 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                             <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                             <span>{t.destination}</span>
                           </td>
-                          <td className="py-2.5 font-mono text-slate-600 dark:text-slate-300 tabular-nums">
+                          <td className="py-2.5 text-slate-600 dark:text-slate-300 tabular-nums">
                             {formatDisplayDate(t.startDate)} → {formatDisplayDate(t.endDate)}
                           </td>
-                          <td className="py-2.5 text-right font-mono font-bold text-slate-900 dark:text-slate-100 tabular-nums">
+                          <td className="py-2.5 text-right font-bold text-slate-900 dark:text-slate-100 tabular-nums">
                             {t.overlappingDays} days
                           </td>
                         </tr>
@@ -309,7 +309,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs flex flex-col justify-between transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-slate-500 dark:text-slate-300 uppercase font-semibold">
+                  <span className="text-xs text-slate-500 dark:text-slate-300 font-semibold">
                     British Nationality Act 1981 Section 6(1)
                   </span>
                   {renderBadge(natResult.fiveYearStatus)}
@@ -322,15 +322,15 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 </p>
 
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-3xl font-extrabold font-mono tabular-nums text-slate-900 dark:text-slate-100">
+                  <span className="text-3xl font-extrabold tabular-nums text-slate-900 dark:text-slate-100">
                     {natResult.fiveYearAbsenceDays}
                   </span>
-                  <span className="text-xs font-mono text-slate-500 dark:text-slate-300">/ 450 days</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-300">/ 450 days</span>
                 </div>
 
                 <div className="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden mb-3">
                   <div
-                    className={`h-full rounded-full transition-all ${
+                    className={`h-full rounded-full transition-[transform,opacity] ${
                       natResult.fiveYearAbsenceDays > 450
                         ? 'bg-red-500'
                         : natResult.fiveYearAbsenceDays >= 400
@@ -343,7 +343,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
 
                 <div className="text-xs text-slate-600 dark:text-slate-300">
                   Remaining allowance:{' '}
-                  <strong className="font-mono tabular-nums text-teal-700 dark:text-teal-400">
+                  <strong className="tabular-nums text-teal-700 dark:text-teal-400">
                     {natResult.fiveYearRemainingAllowance} days
                   </strong>
                 </div>
@@ -359,7 +359,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700 p-6 shadow-xs flex flex-col justify-between transition-colors">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-slate-500 dark:text-slate-300 uppercase font-semibold">
+                  <span className="text-xs text-slate-500 dark:text-slate-300 font-semibold">
                     Form AN Residence Requirement
                   </span>
                   {renderBadge(natResult.final12MonthsStatus)}
@@ -372,15 +372,15 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 </p>
 
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-3xl font-extrabold font-mono tabular-nums text-slate-900 dark:text-slate-100">
+                  <span className="text-3xl font-extrabold tabular-nums text-slate-900 dark:text-slate-100">
                     {natResult.final12MonthsAbsenceDays}
                   </span>
-                  <span className="text-xs font-mono text-slate-500 dark:text-slate-300">/ 90 days</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-300">/ 90 days</span>
                 </div>
 
                 <div className="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden mb-3">
                   <div
-                    className={`h-full rounded-full transition-all ${
+                    className={`h-full rounded-full transition-[transform,opacity] ${
                       natResult.final12MonthsAbsenceDays > 90
                         ? 'bg-red-500'
                         : natResult.final12MonthsAbsenceDays >= 75
@@ -393,7 +393,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
 
                 <div className="text-xs text-slate-600 dark:text-slate-300">
                   Remaining allowance:{' '}
-                  <strong className="font-mono tabular-nums text-teal-700 dark:text-teal-400">
+                  <strong className="tabular-nums text-teal-700 dark:text-teal-400">
                     {natResult.final12MonthsRemainingAllowance} days
                   </strong>
                 </div>
@@ -428,7 +428,7 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                 </h3>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   Under the British Nationality Act 1981, naturalisation applicants must have been physically present in the UK on the day exactly 5 years prior to the date the application is received by the Home Office (Date:{' '}
-                  <span className="font-mono font-medium text-slate-900 dark:text-slate-100">
+                  <span className="font-medium text-slate-900 dark:text-slate-100">
                     {formatDisplayDate(natResult.fiveYearPeriodStart)}
                   </span>
                   ).
@@ -466,10 +466,10 @@ export const AbsenceAnalyticsView: React.FC<AbsenceAnalyticsViewProps> = ({
                     <span className="text-xs font-semibold text-slate-500 dark:text-slate-300 block mb-1">
                       {y.label}
                     </span>
-                    <div className="text-base sm:text-lg font-bold font-mono text-slate-900 dark:text-slate-100 tabular-nums">
+                    <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tabular-nums">
                       {y.days} d
                     </div>
-                    <div className="text-[10px] text-slate-400 dark:text-slate-500 font-mono mt-1">
+                    <div className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
                       {y.startDate.slice(0, 4)} - {y.endDate.slice(0, 4)}
                     </div>
                   </div>

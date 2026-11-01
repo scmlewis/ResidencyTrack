@@ -22,7 +22,7 @@
   h4 { font-size: 1rem; font-weight: 600; line-height: 1.35; }
   p, li, span { font-size: 0.8125rem; }
 
-  code, pre, .font-mono {
+  code, pre, .{
     font-family: 'JetBrains Mono', monospace;
   }
 }

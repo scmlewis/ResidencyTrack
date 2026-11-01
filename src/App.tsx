@@ -141,7 +141,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0B132B] flex flex-col lg:flex-row text-slate-800 dark:text-slate-100 transition-colors overflow-x-hidden max-w-full">
+    <div className="min-h-dvh bg-[#F8FAFC] dark:bg-[#0B132B] flex flex-col lg:flex-row text-slate-800 dark:text-slate-100 transition-colors overflow-x-hidden max-w-full">
       {/* Sidebar Navigation */}
       <Navigation
         currentTab={currentTab}
@@ -153,9 +153,9 @@ export const App: React.FC = () => {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         {/* Top Header Bar */}
-        <header className="hidden lg:flex items-center justify-between px-8 py-3.5 bg-white/90 dark:bg-[#0B132B]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-700/60 shrink-0 z-30 shadow-2xl fixed top-0 left-[16rem] right-0 transition-colors">
+        <header className="hidden lg:flex items-center justify-between px-8 py-3.5 bg-white/90 dark:bg-[#0B132B]/90  border-b border-slate-200/80 dark:border-slate-700/60 shrink-0 z-30  fixed top-0 left-[16rem] right-0 transition-colors">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-semibold text-slate-400 dark:text-slate-300 uppercase tracking-wider">
+            <span className="text-xs font-semibold text-slate-400 dark:text-slate-300 ">
               {currentTab.replace('_', ' ')}
             </span>
             <span className="text-slate-300 dark:text-slate-600">/</span>

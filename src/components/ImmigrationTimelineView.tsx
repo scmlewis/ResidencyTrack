@@ -39,7 +39,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
         );
       case 'system_projection':
         return (
-          <span className="text-[11px] font-semibold text-purple-800 bg-purple-50 border border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-800/40 px-2 py-0.5 rounded-md">
+          <span className="text-[11px] font-semibold text-teal-800 bg-teal-50 border border-teal-200 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-800/40 px-2 py-0.5 rounded-md">
             System Projection
           </span>
         );
@@ -76,7 +76,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
             <span className="text-slate-600 dark:text-slate-300">User-Provided Estimate</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-purple-500" />
+            <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
             <span className="text-slate-600 dark:text-slate-300">System Calculation Projection</span>
           </div>
         </div>
@@ -115,7 +115,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
                     <div className="flex items-center gap-2">
                       <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">{milestone.title}</h3>
                       {isCompleted && (
-                        <span className="text-[10px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+                        <span className="text-[10px] font-bold text-emerald-700 dark:text-emerald-400 ">
                           Completed
                         </span>
                       )}
@@ -124,11 +124,11 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
                   </div>
 
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-base font-mono font-bold tabular-nums text-slate-900 dark:text-slate-100">
+                    <span className="text-base font-bold tabular-nums text-slate-900 dark:text-slate-100">
                       {formatDisplayDate(milestone.date, { fullMonth: true })}
                     </span>
                     {milestone.daysRemaining !== undefined && !isCompleted && (
-                      <span className="text-xs font-mono text-teal-700 dark:text-teal-400 font-semibold">
+                      <span className="text-xs text-teal-700 dark:text-teal-400 font-semibold">
                         ({milestone.daysRemaining} days remaining)
                       </span>
                     )}
@@ -149,8 +149,8 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
                   )}
 
                   {milestone.type === 'earliest_naturalisation_application' && (
-                    <div className="mt-3 p-2.5 bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800/60 rounded-lg text-xs text-purple-900 dark:text-purple-200 flex items-start gap-2">
-                      <Info className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
+                    <div className="mt-3 p-2.5 bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/60 rounded-lg text-xs text-teal-900 dark:text-teal-200 flex items-start gap-2">
+                      <Info className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
                       <span>
                         Standard British nationality applicants must hold Indefinite Leave to Remain for at least 12 full calendar months before applying for naturalisation.
                       </span>

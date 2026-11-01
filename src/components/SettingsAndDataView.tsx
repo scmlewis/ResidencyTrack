@@ -400,10 +400,10 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
                     <div className="font-bold text-slate-900 dark:text-slate-100">{rule.sourceTitle}</div>
                     <div className="text-[11px] text-slate-500 dark:text-slate-300 mt-0.5">{rule.description}</div>
                   </td>
-                  <td className="py-3 px-3 font-mono font-bold text-slate-900 dark:text-slate-100 tabular-nums">
+                  <td className="py-3 px-3 font-bold text-slate-900 dark:text-slate-100 tabular-nums">
                     {rule.threshold !== null ? `${rule.threshold} days` : '5 Years'}
                   </td>
-                  <td className="py-3 px-3 font-mono text-slate-600 dark:text-slate-300">
+                  <td className="py-3 px-3 text-slate-600 dark:text-slate-300">
                     {rule.countingMethod}
                   </td>
                   <td className="py-3 px-3">
@@ -463,7 +463,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
                     <span className="font-semibold text-slate-900 dark:text-slate-100">
                       {t.id}. {t.name}
                     </span>
-                    <span className="text-slate-400 dark:text-slate-500 ml-2 font-mono text-[11px]">
+                    <span className="text-slate-400 dark:text-slate-500 ml-2 text-[11px]">
                       ({t.expected})
                     </span>
                   </div>
@@ -483,8 +483,8 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
 
       {/* Confirmation Modals */}
       {confirmDemoOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 ">
+          <div className="bg-white dark:bg-slate-800 rounded-xl  border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
             <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Reset to Sample Data?</h3>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               This will overwrite your existing records with the realistic BN(O) visa sample travel history. Any unexported data will be replaced.
@@ -508,8 +508,8 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
       )}
 
       {confirmClearOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 ">
+          <div className="bg-white dark:bg-slate-800 rounded-xl  border border-slate-200 dark:border-slate-700 p-6 max-w-sm w-full space-y-4 transition-colors">
             <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">Clear All Personal Data?</h3>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               This will permanently delete all travel records and reset your immigration profile in this browser.

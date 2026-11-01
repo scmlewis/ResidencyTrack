@@ -41,7 +41,7 @@ export const TutorialView: React.FC = () => {
       <div className="bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-xl p-5 flex items-start gap-3">
         <ArrowRight className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
         <p className="text-sm text-teal-800 dark:text-teal-200">
-          Tip: start with your Immigration Profile, then log a few trips — the Dashboard and Analytics will populate automatically.
+          Tip: start with your Immigration Profile, then log a few trips , the Dashboard and Analytics will populate automatically.
         </p>
       </div>
     </div>
