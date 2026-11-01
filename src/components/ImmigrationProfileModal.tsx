@@ -70,7 +70,7 @@ if (!isOpen && !fullPage) return null;
         <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/70">
           <div>
             <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Immigration Profile</h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
               Configure your British National (Overseas) qualifying timeline
             </p>
           </div>
@@ -116,7 +116,7 @@ if (!isOpen && !fullPage) return null;
                 onChange={e => setFormData({ ...formData, visaGrantDate: e.target.value || null })}
                 className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500 font-mono"
               />
-              <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 block">
+              <span className="text-[11px] text-slate-500 dark:text-slate-300 mt-1 block">
                 Official approval date on grant letter.
               </span>
             </div>
@@ -132,7 +132,7 @@ if (!isOpen && !fullPage) return null;
                 onChange={e => setFormData({ ...formData, firstUKArrivalDate: e.target.value || null })}
                 className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500 font-mono"
               />
-              <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 block">
+              <span className="text-[11px] text-slate-500 dark:text-slate-300 mt-1 block">
                 Physical arrival stamp / e-gate entry.
               </span>
             </div>
@@ -192,7 +192,7 @@ if (!isOpen && !fullPage) return null;
               onChange={e => setFormData({ ...formData, actualILRGrantDate: e.target.value || null })}
               className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500 font-mono"
             />
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 block">
+            <span className="text-[11px] text-slate-500 dark:text-slate-300 mt-1 block">
               Leave blank if still completing 5 years. Used to accurately anchor citizenship eligibility.
             </span>
           </div>

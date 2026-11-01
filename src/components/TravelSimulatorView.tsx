@@ -134,7 +134,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Travel Impact Simulator
             </h1>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
               Simulate proposed overseas travel itineraries before booking flights to ensure continuous residence compliance
             </p>
           </div>
@@ -142,7 +142,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
 
         {/* Preset quick test buttons */}
         <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex flex-wrap items-center gap-2">
-          <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Quick Scenarios:</span>
+          <span className="text-xs text-slate-500 dark:text-slate-300 font-medium">Quick Scenarios:</span>
           <button
             onClick={() => handleApplyPreset(14, 'Spain', '2-Week Mediterranean Holiday')}
             className="px-2.5 py-1 text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-md border border-slate-200 dark:border-slate-700 transition-colors"
@@ -279,7 +279,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
 
               {/* Trip Counted Days Summary */}
               <div className="p-3 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs flex items-center justify-between font-mono">
-                <span className="text-slate-600 dark:text-slate-400">Simulated Whole Days Outside UK:</span>
+                <span className="text-slate-600 dark:text-slate-300">Simulated Whole Days Outside UK:</span>
                 <span className="font-bold text-slate-900 dark:text-slate-100 text-sm">
                   +{simulationResult.simulatedTripAbsenceDays} days
                 </span>
@@ -294,7 +294,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
                     <span className="font-mono text-slate-400">Limit: 180d</span>
                   </div>
                   <div className="flex items-center justify-between font-mono text-xs pt-0.5">
-                    <span className="text-slate-500 dark:text-slate-400">
+                    <span className="text-slate-500 dark:text-slate-300">
                       Current: <strong className="text-slate-800 dark:text-slate-200">{simulationResult.ilr.beforePeak}d</strong>
                     </span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
@@ -316,7 +316,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
                     <span className="font-mono text-slate-400">Limit: 450d</span>
                   </div>
                   <div className="flex items-center justify-between font-mono text-xs pt-0.5">
-                    <span className="text-slate-500 dark:text-slate-400">
+                    <span className="text-slate-500 dark:text-slate-300">
                       Current: <strong className="text-slate-800 dark:text-slate-200">{simulationResult.naturalisation5Year.beforeDays}d</strong>
                     </span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
@@ -338,7 +338,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
                     <span className="font-mono text-slate-400">Limit: 90d</span>
                   </div>
                   <div className="flex items-center justify-between font-mono text-xs pt-0.5">
-                    <span className="text-slate-500 dark:text-slate-400">
+                    <span className="text-slate-500 dark:text-slate-300">
                       Current: <strong className="text-slate-800 dark:text-slate-200">{simulationResult.naturalisationFinal12.beforeDays}d</strong>
                     </span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
@@ -358,7 +358,7 @@ export const TravelSimulatorView: React.FC<TravelSimulatorViewProps> = ({
               <div className="hidden md:block overflow-x-auto">
                 <table className="w-full text-xs text-left">
                   <thead>
-                    <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-700/60 text-slate-500 dark:text-slate-400 font-semibold">
+                    <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-700/60 text-slate-500 dark:text-slate-300 font-semibold">
                       <th className="py-2.5 px-3">Statutory Metric</th>
                       <th className="py-2.5 px-3 text-center">Current Total</th>
                       <th className="py-2.5 px-3 text-center">Simulated Total</th>

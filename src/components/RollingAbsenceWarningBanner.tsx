@@ -117,7 +117,7 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
           onClick={onOpenSimulator}
           className="flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-lg shadow-2xs transition-colors whitespace-nowrap self-stretch sm:self-auto shrink-0"
         >
-          <SlidersHorizontal className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
+          <SlidersHorizontal className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
           <span>Simulate Flight</span>
           <ChevronRight className="w-3 h-3 text-slate-400" />
         </button>
@@ -127,14 +127,14 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
       <div className="space-y-1.5 pt-0.5">
         <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono">
           <div className="flex items-center gap-1.5">
-            <span className="text-slate-500 dark:text-slate-400 font-sans text-xs">Peak 12M:</span>
+            <span className="text-slate-500 dark:text-slate-300 font-sans text-xs">Peak 12M:</span>
             <strong className="text-slate-900 dark:text-slate-100 text-xs sm:text-sm font-bold tabular-nums">
               {maxAbsence} / 180 d
             </strong>
-            <span className="text-slate-500 dark:text-slate-400">({percentage}%)</span>
+            <span className="text-slate-500 dark:text-slate-300">({percentage}%)</span>
           </div>
 
-          <div className="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+          <div className="flex items-center gap-1 text-slate-500 dark:text-slate-300">
             <span>Buffer:</span>
             <strong className={`tabular-nums ${tier === 'breached_100' ? 'text-red-600 dark:text-red-400 font-bold' : 'text-slate-900 dark:text-slate-100 font-semibold'}`}>
               {ilrResult.remainingAllowance} d
@@ -173,7 +173,7 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         </div>
 
         {/* Threshold Markers Legend Under the Bar */}
-        <div className="relative w-full text-[10px] text-slate-500 dark:text-slate-400 select-none font-mono">
+        <div className="relative w-full text-[10px] text-slate-500 dark:text-slate-300 select-none font-mono">
           <div className="flex justify-between items-center">
             <span>0d</span>
             <span className={maxAbsence >= 135 ? 'text-amber-700 dark:text-amber-400 font-bold' : ''}>
@@ -194,13 +194,13 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         <div className={`p-2 rounded-lg border ${
           tier === 'safe'
             ? 'bg-teal-50/80 dark:bg-teal-950/40 border-teal-300 dark:border-teal-700 font-semibold text-teal-900 dark:text-teal-200'
-            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
+            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
         }`}>
           <div className="flex items-center gap-1.5 mb-0.5">
             <span className="w-2 h-2 rounded-full bg-teal-500" />
             <span className="font-bold text-slate-900 dark:text-slate-200">0%–74% Safe</span>
           </div>
-          <p className="text-[10px] text-slate-500 dark:text-slate-400">
+          <p className="text-[10px] text-slate-500 dark:text-slate-300">
             0–134 days. Normal travel flexibility without settlement risk.
           </p>
         </div>
@@ -208,13 +208,13 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         <div className={`p-2 rounded-lg border ${
           tier === 'warning_75'
             ? 'bg-amber-100/70 dark:bg-amber-950/40 border-amber-400 dark:border-amber-700 font-semibold text-amber-950 dark:text-amber-200 shadow-2xs'
-            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
+            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
         }`}>
           <div className="flex items-center gap-1.5 mb-0.5">
             <span className="w-2 h-2 rounded-full bg-amber-500" />
             <span className="font-bold text-slate-900 dark:text-slate-200">75%–89% Caution</span>
           </div>
-          <p className="text-[10px] text-slate-500 dark:text-slate-400">
+          <p className="text-[10px] text-slate-500 dark:text-slate-300">
             135–161 days. Plan subsequent travel cautiously before booking.
           </p>
         </div>
@@ -222,13 +222,13 @@ export const RollingAbsenceWarningBanner: React.FC<RollingAbsenceWarningBannerPr
         <div className={`p-2 rounded-lg border ${
           tier === 'critical_90' || tier === 'breached_100'
             ? 'bg-orange-100/70 dark:bg-orange-950/40 border-orange-400 dark:border-orange-700 font-semibold text-orange-950 dark:text-orange-200 shadow-2xs'
-            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
+            : 'bg-white/60 dark:bg-slate-700/60 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300'
         }`}>
           <div className="flex items-center gap-1.5 mb-0.5">
             <span className="w-2 h-2 rounded-full bg-red-600" />
             <span className="font-bold text-slate-900 dark:text-slate-200">90%–100%+ Critical</span>
           </div>
-          <p className="text-[10px] text-slate-500 dark:text-slate-400">
+          <p className="text-[10px] text-slate-500 dark:text-slate-300">
             162–180+ days. Risk of breaching CR 2.2 statutory limit.
           </p>
         </div>

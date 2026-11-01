@@ -144,7 +144,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Interactive Calendar</h1>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
               Visualise UK physical presence, overseas travel periods, and immigration milestones
             </p>
           </div>
@@ -196,25 +196,25 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
         <div className="flex flex-wrap items-center gap-4 text-xs mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-3 rounded-xs bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700" />
-            <span className="text-slate-600 dark:text-slate-400">UK Presence</span>
+            <span className="text-slate-600 dark:text-slate-300">UK Presence</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-3 rounded-xs bg-blue-100 dark:bg-blue-950/60 border border-blue-300 dark:border-blue-800" />
-            <span className="text-slate-600 dark:text-slate-400">Completed Overseas Travel</span>
+            <span className="text-slate-600 dark:text-slate-300">Completed Overseas Travel</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-3 rounded-xs bg-purple-100 dark:bg-purple-950/60 border border-purple-300 dark:border-purple-800" />
-            <span className="text-slate-600 dark:text-slate-400">Planned Travel</span>
+            <span className="text-slate-600 dark:text-slate-300">Planned Travel</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-3 rounded-xs bg-teal-100 dark:bg-teal-950/60 border border-teal-300 dark:border-teal-800" />
-            <span className="text-slate-600 dark:text-slate-400">Departure / Arrival Day (UK Day)</span>
+            <span className="text-slate-600 dark:text-slate-300">Departure / Arrival Day (UK Day)</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-amber-500" />
-            <span className="text-slate-600 dark:text-slate-400">Immigration Milestone</span>
+            <span className="text-slate-600 dark:text-slate-300">Immigration Milestone</span>
           </div>
-          <div className="ml-auto text-xs font-mono text-slate-500 dark:text-slate-400">
+          <div className="ml-auto text-xs font-mono text-slate-500 dark:text-slate-300">
             Monthly Absence:{' '}
             <strong className="text-slate-900 dark:text-slate-100 font-bold">{monthlyAbsenceDays} days</strong>
           </div>
@@ -318,7 +318,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                 {/* Trips on Date */}
                 {selectedDetails.trips.length > 0 ? (
                   <div className="space-y-3">
-                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-300 uppercase tracking-wider">
                       Active Overseas Travel
                     </div>
                     {selectedDetails.trips.map(trip => (
@@ -338,12 +338,12 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                         <div className="text-slate-600 dark:text-slate-300">
                           {trip.purpose}
                         </div>
-                        <div className="text-slate-500 dark:text-slate-400 font-mono text-[11px]">
+                        <div className="text-slate-500 dark:text-slate-300 font-mono text-[11px]">
                           {formatDisplayDate(trip.departureDate)} → {formatDisplayDate(trip.returnDate)}
                         </div>
 
                         {/* Counting rule notice */}
-                        <div className="pt-2 border-t border-slate-200 dark:border-slate-700 text-[11px] text-slate-500 dark:text-slate-400">
+                        <div className="pt-2 border-t border-slate-200 dark:border-slate-700 text-[11px] text-slate-500 dark:text-slate-300">
                           {selectedDate === trip.departureDate ? (
                             <span className="text-teal-700 dark:text-teal-400 font-medium">Departure day: partial day in UK, not counted as absence.</span>
                           ) : selectedDate === trip.returnDate ? (
@@ -358,7 +358,7 @@ export const InteractiveCalendarView: React.FC<InteractiveCalendarViewProps> = (
                 ) : (
                   <div className="p-4 bg-slate-50 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-600 dark:text-slate-300 space-y-1">
                     <div className="font-semibold text-slate-800 dark:text-slate-200">Physically in the United Kingdom</div>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                    <p className="text-[11px] text-slate-500 dark:text-slate-300">
                       No overseas travel recorded on this calendar day. Counts fully towards your qualifying continuous residence.
                     </p>
                   </div>

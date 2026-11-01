@@ -53,7 +53,7 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Immigration Timeline</h1>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
               Full 5-year BN(O) settlement route through to British citizenship eligibility
             </p>
           </div>
@@ -69,15 +69,15 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
         <div className="flex flex-wrap items-center gap-4 text-xs mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-            <span className="text-slate-600 dark:text-slate-400">Confirmed Legal Date</span>
+            <span className="text-slate-600 dark:text-slate-300">Confirmed Legal Date</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-            <span className="text-slate-600 dark:text-slate-400">User-Provided Estimate</span>
+            <span className="text-slate-600 dark:text-slate-300">User-Provided Estimate</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-purple-500" />
-            <span className="text-slate-600 dark:text-slate-400">System Calculation Projection</span>
+            <span className="text-slate-600 dark:text-slate-300">System Calculation Projection</span>
           </div>
         </div>
       </div>
@@ -163,9 +163,9 @@ export const ImmigrationTimelineView: React.FC<ImmigrationTimelineViewProps> = (
         </div>
 
         {/* Legal Disclaimer Box */}
-        <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-600 dark:text-slate-400 space-y-1">
+        <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-700/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-600 dark:text-slate-300 space-y-1">
           <div className="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-            <AlertCircle className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
+            <AlertCircle className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
             <span>Statutory Estimation Notice</span>
           </div>
           <p className="leading-relaxed">

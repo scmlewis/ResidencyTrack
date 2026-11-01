@@ -268,7 +268,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
         <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
           Settings, Data Management & Policy Rules
         </h1>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+        <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
           Manage local records, backup data, inspect official statutory sources, and verify calculation test suite
         </p>
       </div>
@@ -315,7 +315,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
               onClick={handleExportJSON}
               className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 shadow-xs transition-colors"
             >
-              <Download className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
+              <Download className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
               <span>Export JSON Backup</span>
             </button>
 
@@ -323,7 +323,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
               onClick={handleExportCSV}
               className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 shadow-xs transition-colors"
             >
-              <FileSpreadsheet className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
+              <FileSpreadsheet className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
               <span>Export CSV (Travel Log)</span>
             </button>
 
@@ -355,7 +355,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
               onClick={() => setConfirmDemoOpen(true)}
               className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-lg transition-colors"
             >
-              <RotateCcw className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
+              <RotateCcw className="w-3.5 h-3.5 text-slate-500 dark:text-slate-300" />
               <span>Reset to Sample BN(O) Data</span>
             </button>
 
@@ -377,7 +377,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
             <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
             <span>Official Policy Reference Library</span>
           </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
             All absence thresholds and calculation methods are tied to verified UK legislation and Home Office guidance
           </p>
         </div>
@@ -385,7 +385,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
             <thead>
-              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/60 text-slate-600 dark:text-slate-400 font-semibold">
+              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 font-semibold">
                 <th className="py-2.5 px-3">Rule & Category</th>
                 <th className="py-2.5 px-3">Threshold</th>
                 <th className="py-2.5 px-3">Counting Method</th>
@@ -398,7 +398,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
                 <tr key={rule.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
                   <td className="py-3 px-3">
                     <div className="font-bold text-slate-900 dark:text-slate-100">{rule.sourceTitle}</div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">{rule.description}</div>
+                    <div className="text-[11px] text-slate-500 dark:text-slate-300 mt-0.5">{rule.description}</div>
                   </td>
                   <td className="py-3 px-3 font-mono font-bold text-slate-900 dark:text-slate-100 tabular-nums">
                     {rule.threshold !== null ? `${rule.threshold} days` : '5 Years'}
@@ -437,7 +437,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
               <PlayCircle className="w-4 h-4 text-teal-600 dark:text-teal-400" />
               <span>Calculation Engine Automated Test Suite</span>
             </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
               Run all 14 statutory edge case tests in-browser to verify deterministic mathematics and rule compliance
             </p>
           </div>
@@ -475,7 +475,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
             </div>
           </div>
         ) : (
-          <div className="p-4 bg-slate-50 dark:bg-slate-700/40 border border-dashed border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-500 dark:text-slate-400 text-center">
+          <div className="p-4 bg-slate-50 dark:bg-slate-700/40 border border-dashed border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-500 dark:text-slate-300 text-center">
             Click "Run Calculation Tests" to execute the PRD compliance test cases live.
           </div>
         )}
