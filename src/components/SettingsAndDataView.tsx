@@ -1,3 +1,4 @@
+import { Accordion } from './Accordion';
 import React, { useState } from 'react';
 import {
   Download,
@@ -371,17 +372,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
       </div>
 
       {/* Official Policy Rules Reference Table */}
-      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs space-y-4 transition-colors">
-        <div>
-          <h2 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-            <span>Official Policy Reference Library</span>
-          </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5">
-            All absence thresholds and calculation methods are tied to verified UK legislation and Home Office guidance
-          </p>
-        </div>
-
+      <Accordion title="Official Policy Reference Library" defaultOpen={false}>
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
             <thead>
@@ -427,7 +418,7 @@ export const SettingsAndDataView: React.FC<SettingsAndDataViewProps> = ({
             </tbody>
           </table>
         </div>
-      </div>
+      </Accordion>
 
       {/* Live Calculation Engine Test Runner */}
       <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-xs space-y-4 transition-colors">

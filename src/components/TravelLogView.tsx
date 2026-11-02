@@ -1,3 +1,4 @@
+import { Accordion } from './Accordion';
 import React, { useState, useMemo } from 'react';
 import {
   Plus,

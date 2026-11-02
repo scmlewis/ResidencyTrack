@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { ImmigrationProfile, TimelineMilestone } from '../types';
 import { formatDisplayDate } from '../engine/dateUtils';
+import { Accordion } from './Accordion';
 
 interface ImmigrationTimelineViewProps {
   profile: ImmigrationProfile;
