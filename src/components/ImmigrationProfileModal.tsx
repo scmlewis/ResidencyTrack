@@ -57,10 +57,10 @@ if (!isOpen && !fullPage) return null;
   };
 
   const outerClass = fullPage
-    ? 'w-full max-w-3xl mx-auto'
+    ? 'w-full max-w-7xl mx-auto'
     : 'fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/70  overflow-y-auto';
   const innerClass = fullPage
-    ? 'bg-transparent transition-colors'
+    ? 'bg-slate-900 border border-slate-700 rounded-xl transition-colors'
     : 'bg-white dark:bg-slate-900 rounded-xl  border border-slate-200 dark:border-slate-700 w-full max-w-full sm:max-w-lg max-h-[90vh] overflow-y-auto my-4 sm:my-8 transition-colors';
 
   return (
