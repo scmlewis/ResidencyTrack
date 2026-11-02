@@ -179,9 +179,19 @@ if (!isOpen && !fullPage) return null;
                 I confirm this date represents my intended continuous residence start
               </span>
             </label>
-          </div>
 
-          {/* Actual ILR Grant Date (Optional) */}
+            <label className="flex items-center gap-2 cursor-pointer pt-1">
+              <input
+                type="checkbox"
+                checked={formData.travelHistoryCompleteness === 'CONFIRMED_COMPLETE'}
+                onChange={e => setFormData({ ...formData, travelHistoryCompleteness: e.target.checked ? 'CONFIRMED_COMPLETE' : 'NOT_CONFIRMED' })}
+                className="w-4 h-4 text-teal-600 border-slate-300 dark:border-slate-700 rounded focus:ring-teal-500"
+              />
+              <span className="text-xs text-slate-700 dark:text-slate-300 font-medium">
+                I confirm my travel history is complete
+              </span>
+            </label>
+          </div>
           <div>
             <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Actual ILR Grant Date <span className="text-slate-400 dark:text-slate-500 font-normal">(Optional if already granted)</span>

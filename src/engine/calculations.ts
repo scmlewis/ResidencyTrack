@@ -261,6 +261,22 @@ export function calculateILRContinuousResidence(
 
   const completenessConfirmed = profile?.travelHistoryCompleteness === 'CONFIRMED_COMPLETE';
 
+  if (hasIncomplete || hasInvalid) {
+    return {
+      maxAbsenceCount: 0,
+      threshold: ILR_12_MONTH_MAX_ABSENCE,
+      remainingAllowance: ILR_12_MONTH_MAX_ABSENCE,
+      peakWindow: null,
+      status: 'INSUFFICIENT_DATA',
+      hasIncompleteData: hasIncomplete,
+      hasInvalidData: hasInvalid,
+      qualifyingStartDate: qualifyingStart,
+      qualifyingEndDate: null,
+      totalTripsCount: records.length,
+      windowEvaluations: []
+    };
+  }
+
   if (validTrips.length === 0) {
     return {
       maxAbsenceCount: 0,
@@ -408,7 +424,24 @@ export function calculateNaturalisationRequirements(
 ): NaturalisationComplianceResult {
   const qualifyingStart = profile?.qualifyingPeriodStartDate;
 
-  // Expected 5-year settlement anniversary
+  if (!qualifyingStart || !isValidIsoDate(qualifyingStart) || !profile?.qualifyingPeriodStartConfirmed) {
+    return {
+      fiveYearAbsenceDays: 0,
+      fiveYearThreshold: NATURALISATION_5_YEAR_MAX_ABSENCE,
+      fiveYearRemainingAllowance: NATURALISATION_5_YEAR_MAX_ABSENCE,
+      fiveYearStatus: 'INSUFFICIENT_DATA',
+      final12MonthsAbsenceDays: 0,
+      final12MonthsThreshold: NATURALISATION_FINAL_YEAR_MAX_ABSENCE,
+      final12MonthsRemainingAllowance: NATURALISATION_FINAL_YEAR_MAX_ABSENCE,
+      final12MonthsStatus: 'INSUFFICIENT_DATA',
+      fiveYearPeriodStart: null,
+      fiveYearPeriodEnd: null,
+      final12MonthsStart: null,
+      final12MonthsEnd: null,
+      presentOnDay1: null,
+      hasIncompleteData: true
+    };
+  }
   const defaultFiveYearEnd = qualifyingStart && isValidIsoDate(qualifyingStart)
     ? addYearsCalendar(qualifyingStart, 5)
     : null;
@@ -460,6 +493,46 @@ export function calculateNaturalisationRequirements(
   );
 
   const hasIncomplete = records.some(r => !r.departureDate || !r.returnDate);
+
+  const completenessConfirmed = profile?.travelHistoryCompleteness === 'CONFIRMED_COMPLETE';
+
+  if (hasIncomplete || records.some(r => r.departureDate && r.returnDate && r.departureDate > r.returnDate)) {
+    return {
+      fiveYearAbsenceDays: 0,
+      fiveYearThreshold: NATURALISATION_5_YEAR_MAX_ABSENCE,
+      fiveYearRemainingAllowance: NATURALISATION_5_YEAR_MAX_ABSENCE,
+      fiveYearStatus: 'INSUFFICIENT_DATA',
+      final12MonthsAbsenceDays: 0,
+      final12MonthsThreshold: NATURALISATION_FINAL_YEAR_MAX_ABSENCE,
+      final12MonthsRemainingAllowance: NATURALISATION_FINAL_YEAR_MAX_ABSENCE,
+      final12MonthsStatus: 'INSUFFICIENT_DATA',
+      fiveYearPeriodStart: null,
+      fiveYearPeriodEnd: null,
+      final12MonthsStart: null,
+      final12MonthsEnd: null,
+      presentOnDay1: false,
+      hasIncompleteData: true
+    };
+  }
+
+  if (records.length === 0 && !completenessConfirmed) {
+    return {
+      fiveYearAbsenceDays: 0,
+      fiveYearThreshold: NATURALISATION_5_YEAR_MAX_ABSENCE,
+      fiveYearRemainingAllowance: NATURALISATION_5_YEAR_MAX_ABSENCE,
+      fiveYearStatus: 'INSUFFICIENT_DATA',
+      final12MonthsAbsenceDays: 0,
+      final12MonthsThreshold: NATURALISATION_FINAL_YEAR_MAX_ABSENCE,
+      final12MonthsRemainingAllowance: NATURALISATION_FINAL_YEAR_MAX_ABSENCE,
+      final12MonthsStatus: 'INSUFFICIENT_DATA',
+      fiveYearPeriodStart: null,
+      fiveYearPeriodEnd: null,
+      final12MonthsStart: null,
+      final12MonthsEnd: null,
+      presentOnDay1: false,
+      hasIncompleteData: true
+    };
+  }
 
   // 1. Calculate 5-year whole absence days
   let total5YearAbsence = 0;

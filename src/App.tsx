@@ -78,18 +78,30 @@ export const App: React.FC = () => {
     const updated = [newTrip, ...records];
     setRecords(updated);
     saveStoredTravelRecords(updated);
+    if (profile) {
+      const p = { ...profile, travelHistoryCompleteness: 'NOT_CONFIRMED' as const, updatedAt: new Date().toISOString() };
+      setProfile(p); saveStoredProfile(p);
+    }
   };
 
   const handleUpdateTrip = (updatedTrip: TravelRecord) => {
     const updated = records.map(r => (r.id === updatedTrip.id ? updatedTrip : r));
     setRecords(updated);
     saveStoredTravelRecords(updated);
+    if (profile) {
+      const p = { ...profile, travelHistoryCompleteness: 'NOT_CONFIRMED' as const, updatedAt: new Date().toISOString() };
+      setProfile(p); saveStoredProfile(p);
+    }
   };
 
   const handleDeleteTrip = (tripId: string) => {
     const updated = records.filter(r => r.id !== tripId);
     setRecords(updated);
     saveStoredTravelRecords(updated);
+    if (profile) {
+      const p = { ...profile, travelHistoryCompleteness: 'NOT_CONFIRMED' as const, updatedAt: new Date().toISOString() };
+      setProfile(p); saveStoredProfile(p);
+    }
   };
 
   const handleDataLoaded = (newProfile: ImmigrationProfile, newRecords: TravelRecord[]) => {
