@@ -57,7 +57,7 @@ if (!isOpen && !fullPage) return null;
   };
 
   const outerClass = fullPage
-    ? 'w-full max-w-7xl mx-auto'
+    ? 'w-full max-w-7xl mx-auto space-y-4 sm:space-y-6'
     : 'fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/70  overflow-y-auto';
   const innerClass = fullPage
     ? 'bg-slate-900 border border-slate-700 rounded-xl transition-colors'
@@ -65,6 +65,12 @@ if (!isOpen && !fullPage) return null;
 
   return (
     <div className={outerClass}>
+      {fullPage && (
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4 sm:p-6">
+          <h1 className="text-xl font-bold text-slate-100">Immigration Profile</h1>
+          <p className="text-sm text-slate-300 mt-1">Configure your BN(O) qualifying timeline and travel history completeness.</p>
+        </div>
+      )}
       <div className={innerClass}>
         {/* Header */}
         <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/70">
