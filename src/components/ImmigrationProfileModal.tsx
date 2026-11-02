@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Accordion } from './Accordion';
 import { X, ShieldAlert, Check, Calendar, Info } from 'lucide-react';
 import { ImmigrationProfile } from '../types';
 
