@@ -64,6 +64,7 @@ describe('ResidencyTrack PRD Required Calculation Test Suite', () => {
       qualifyingPeriodStartConfirmed: true,
       actualILRGrantDate: null,
       naturalisationRoute: 'standard_5_year',
+      travelHistoryCompleteness: 'CONFIRMED_COMPLETE',
       createdAt: '2021-08-15',
       updatedAt: '2021-08-15'
     };
@@ -105,6 +106,7 @@ describe('ResidencyTrack PRD Required Calculation Test Suite', () => {
       qualifyingPeriodStartConfirmed: true,
       actualILRGrantDate: null,
       naturalisationRoute: 'standard_5_year',
+      travelHistoryCompleteness: 'CONFIRMED_COMPLETE',
       createdAt: '2021-08-15',
       updatedAt: '2021-08-15'
     };
@@ -142,6 +144,7 @@ describe('ResidencyTrack PRD Required Calculation Test Suite', () => {
       qualifyingPeriodStartConfirmed: true,
       actualILRGrantDate: null,
       naturalisationRoute: 'standard_5_year',
+      travelHistoryCompleteness: 'CONFIRMED_COMPLETE',
       createdAt: '2021-08-15',
       updatedAt: '2021-08-15'
     };
@@ -171,6 +174,7 @@ describe('ResidencyTrack PRD Required Calculation Test Suite', () => {
       qualifyingPeriodStartConfirmed: true,
       actualILRGrantDate: null,
       naturalisationRoute: 'standard_5_year',
+      travelHistoryCompleteness: 'CONFIRMED_COMPLETE',
       createdAt: '2021-08-15',
       updatedAt: '2021-08-15'
     };
@@ -199,6 +203,7 @@ describe('ResidencyTrack PRD Required Calculation Test Suite', () => {
       qualifyingPeriodStartConfirmed: true,
       actualILRGrantDate: null,
       naturalisationRoute: 'standard_5_year',
+      travelHistoryCompleteness: 'CONFIRMED_COMPLETE',
       createdAt: '2021-08-15',
       updatedAt: '2021-08-15'
     };
@@ -235,6 +240,7 @@ describe('ResidencyTrack PRD Required Calculation Test Suite', () => {
       qualifyingPeriodStartConfirmed: true,
       actualILRGrantDate: null,
       naturalisationRoute: 'standard_5_year',
+      travelHistoryCompleteness: 'CONFIRMED_COMPLETE',
       createdAt: '2021-08-15',
       updatedAt: '2021-08-15'
     };
@@ -317,6 +323,7 @@ describe('ResidencyTrack PRD Required Calculation Test Suite', () => {
       qualifyingPeriodStartConfirmed: true,
       actualILRGrantDate: null,
       naturalisationRoute: 'standard_5_year',
+      travelHistoryCompleteness: 'CONFIRMED_COMPLETE',
       createdAt: '2021-08-15',
       updatedAt: '2021-08-15'
     };
@@ -362,6 +369,7 @@ describe('ResidencyTrack PRD Required Calculation Test Suite', () => {
       qualifyingPeriodStartConfirmed: false,
       actualILRGrantDate: null,
       naturalisationRoute: 'standard_5_year',
+      travelHistoryCompleteness: 'CONFIRMED_COMPLETE',
       createdAt: '',
       updatedAt: ''
     };

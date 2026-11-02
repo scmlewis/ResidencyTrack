@@ -261,14 +261,14 @@ export function calculateILRContinuousResidence(
 
   const completenessConfirmed = profile?.travelHistoryCompleteness === 'CONFIRMED_COMPLETE';
 
-  if (hasIncomplete || hasInvalid) {
+  if (hasIncomplete || hasInvalid || !completenessConfirmed) {
     return {
       maxAbsenceCount: 0,
       threshold: ILR_12_MONTH_MAX_ABSENCE,
       remainingAllowance: ILR_12_MONTH_MAX_ABSENCE,
       peakWindow: null,
       status: 'INSUFFICIENT_DATA',
-      hasIncompleteData: hasIncomplete,
+      hasIncompleteData: hasIncomplete || !completenessConfirmed,
       hasInvalidData: hasInvalid,
       qualifyingStartDate: qualifyingStart,
       qualifyingEndDate: null,
@@ -493,10 +493,11 @@ export function calculateNaturalisationRequirements(
   );
 
   const hasIncomplete = records.some(r => !r.departureDate || !r.returnDate);
+  const hasInvalid = records.some(r => r.departureDate && r.returnDate && (!isValidIsoDate(r.departureDate) || !isValidIsoDate(r.returnDate) || r.departureDate > r.returnDate));
 
   const completenessConfirmed = profile?.travelHistoryCompleteness === 'CONFIRMED_COMPLETE';
 
-  if (hasIncomplete || records.some(r => r.departureDate && r.returnDate && r.departureDate > r.returnDate)) {
+  if (hasIncomplete || hasInvalid || !completenessConfirmed) {
     return {
       fiveYearAbsenceDays: 0,
       fiveYearThreshold: NATURALISATION_5_YEAR_MAX_ABSENCE,
@@ -510,8 +511,8 @@ export function calculateNaturalisationRequirements(
       fiveYearPeriodEnd: null,
       final12MonthsStart: null,
       final12MonthsEnd: null,
-      presentOnDay1: false,
-      hasIncompleteData: true
+      presentOnDay1: null,
+      hasIncompleteData: hasIncomplete || !completenessConfirmed
     };
   }
 
@@ -529,7 +530,7 @@ export function calculateNaturalisationRequirements(
       fiveYearPeriodEnd: null,
       final12MonthsStart: null,
       final12MonthsEnd: null,
-      presentOnDay1: false,
+      presentOnDay1: null,
       hasIncompleteData: true
     };
   }
