@@ -261,7 +261,7 @@ export function calculateILRContinuousResidence(
 
   const completenessConfirmed = profile?.travelHistoryCompleteness === 'CONFIRMED_COMPLETE';
 
-  if (hasIncomplete || hasInvalid || !completenessConfirmed) {
+  if (hasIncomplete || hasInvalid) {
     return {
       maxAbsenceCount: 0,
       threshold: ILR_12_MONTH_MAX_ABSENCE,
@@ -390,7 +390,9 @@ export function calculateILRContinuousResidence(
   }
 
   let overallStatus: ComplianceStatus = 'WITHIN_NORMAL_LIMIT';
-  if (maxAbsence > ILR_12_MONTH_MAX_ABSENCE) {
+  if (!completenessConfirmed) {
+    overallStatus = 'INSUFFICIENT_DATA';
+  } else if (maxAbsence > ILR_12_MONTH_MAX_ABSENCE) {
     overallStatus = 'NORMAL_LIMIT_EXCEEDED';
   } else if (maxAbsence >= 150) {
     overallStatus = 'APPROACHING_NORMAL_LIMIT';
@@ -402,7 +404,7 @@ export function calculateILRContinuousResidence(
     remainingAllowance: Math.max(0, ILR_12_MONTH_MAX_ABSENCE - maxAbsence),
     peakWindow,
     status: overallStatus,
-    hasIncompleteData: hasIncomplete,
+    hasIncompleteData: hasIncomplete || !completenessConfirmed,
     hasInvalidData: hasInvalid,
     qualifyingStartDate: qualifyingStart,
     qualifyingEndDate: qualifyingEnd,
@@ -497,7 +499,7 @@ export function calculateNaturalisationRequirements(
 
   const completenessConfirmed = profile?.travelHistoryCompleteness === 'CONFIRMED_COMPLETE';
 
-  if (hasIncomplete || hasInvalid || !completenessConfirmed) {
+  if (hasIncomplete || hasInvalid) {
     return {
       fiveYearAbsenceDays: 0,
       fiveYearThreshold: NATURALISATION_5_YEAR_MAX_ABSENCE,
@@ -548,20 +550,23 @@ export function calculateNaturalisationRequirements(
   }
 
   // 3. Physical presence on the first day of the 5-year period (fiveYearStart)
-  // An applicant is absent on fiveYearStart if fiveYearStart falls strictly within a whole absence range
-  let presentOnDay1 = true;
-  for (const trip of validTrips) {
-    const wholeAbsenceStart = addDays(trip.departureDate, 1);
-    const wholeAbsenceEnd = subDays(trip.returnDate!, 1);
-    if (fiveYearStart >= wholeAbsenceStart && fiveYearStart <= wholeAbsenceEnd) {
-      presentOnDay1 = false;
-      break;
+  let presentOnDay1: boolean | null = completenessConfirmed ? true : null;
+  if (completenessConfirmed) {
+    for (const trip of validTrips) {
+      const wholeAbsenceStart = addDays(trip.departureDate, 1);
+      const wholeAbsenceEnd = subDays(trip.returnDate!, 1);
+      if (fiveYearStart >= wholeAbsenceStart && fiveYearStart <= wholeAbsenceEnd) {
+        presentOnDay1 = false;
+        break;
+      }
     }
   }
 
   // Status for 5-year
   let fiveYearStatus: ComplianceStatus = 'WITHIN_NORMAL_LIMIT';
-  if (total5YearAbsence > NATURALISATION_5_YEAR_MAX_ABSENCE) {
+  if (!completenessConfirmed) {
+    fiveYearStatus = 'INSUFFICIENT_DATA';
+  } else if (total5YearAbsence > NATURALISATION_5_YEAR_MAX_ABSENCE) {
     fiveYearStatus = 'NORMAL_LIMIT_EXCEEDED';
   } else if (total5YearAbsence >= 400) {
     fiveYearStatus = 'APPROACHING_NORMAL_LIMIT';
@@ -569,7 +574,9 @@ export function calculateNaturalisationRequirements(
 
   // Status for final 12 months
   let final12Status: ComplianceStatus = 'WITHIN_NORMAL_LIMIT';
-  if (totalFinal12Absence > NATURALISATION_FINAL_YEAR_MAX_ABSENCE) {
+  if (!completenessConfirmed) {
+    final12Status = 'INSUFFICIENT_DATA';
+  } else if (totalFinal12Absence > NATURALISATION_FINAL_YEAR_MAX_ABSENCE) {
     final12Status = 'NORMAL_LIMIT_EXCEEDED';
   } else if (totalFinal12Absence >= 75) {
     final12Status = 'APPROACHING_NORMAL_LIMIT';
