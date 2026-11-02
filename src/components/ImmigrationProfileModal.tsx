@@ -200,7 +200,8 @@ if (!isOpen && !fullPage) return null;
               </span>
             </label>
           </div>
-          <div>
+          <Accordion title="Actual ILR Grant Date (optional)" defaultOpen={false}>
+            <div>
             <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Actual ILR Grant Date <span className="text-slate-400 dark:text-slate-500 font-normal">(Optional if already granted)</span>
             </label>
@@ -213,7 +214,8 @@ if (!isOpen && !fullPage) return null;
             <span className="text-[11px] text-slate-500 dark:text-slate-300 mt-1 block">
               Leave blank if still completing 5 years. Used to accurately anchor citizenship eligibility.
             </span>
-          </div>
+            </div>
+          </Accordion>
 
           {/* Actions */}
           <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-200 dark:border-slate-700">
