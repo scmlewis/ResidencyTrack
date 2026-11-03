@@ -138,12 +138,8 @@ export const App: React.FC = () => {
       title: 'Settings, Data & Policy Rules',
       subtitle: 'JSON backups, CSV exports, official statutory references, and test suite'
     },
-    tutorial: {
-      title: 'Guide & Onboarding',
-      subtitle: 'Step-by-step guide to get started with ResidencyTrack'
-    },
     about: {
-      title: 'About',
+      title: 'Guide & About',
       subtitle: 'Creator information and source code links'
     },
     profile: {
@@ -250,8 +246,7 @@ export const App: React.FC = () => {
               onDataLoaded={handleDataLoaded}
             />
           )}
-          {currentTab === 'tutorial' && <TutorialView />}
-          {currentTab === 'about' && <AboutView />}
+          {currentTab === 'about' && (<><TutorialView /><AboutView /></>)}
           {currentTab === 'profile' && (
             <ImmigrationProfileModal
               isOpen={true}

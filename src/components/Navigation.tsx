@@ -27,7 +27,6 @@ export type NavTab =
   | 'timeline'
   | 'simulator'
   | 'settings'
-  | 'tutorial'
   | 'about'
   | 'profile';
 
@@ -52,15 +51,14 @@ export const Navigation: React.FC<NavigationProps> = ({
 
   const navItems: { id: NavTab; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'profile', label: 'Profile', icon: User },
     { id: 'travel_log', label: 'Travel Log', icon: PlaneTakeoff },
     { id: 'analytics', label: 'Absence Analytics', icon: LineChart },
     { id: 'calendar', label: 'Calendar', icon: CalendarDays },
     { id: 'timeline', label: 'Immigration Timeline', icon: Milestone },
     { id: 'simulator', label: 'Travel Simulator', icon: SlidersHorizontal },
     { id: 'settings', label: 'Settings & Policy Rules', icon: Settings },
-  { id: 'tutorial', label: 'Guide', icon: BookOpen },
-  { id: 'about', label: 'About', icon: Info },
-  { id: 'profile', label: 'Profile', icon: User },
+  { id: 'about', label: 'Guide & About', icon: Info },
   ];
 
 const bottomNavIds = new Set(['dashboard', 'travel_log', 'analytics', 'timeline']);

@@ -18,7 +18,7 @@ export const AboutView: React.FC = () => {
           <User className="w-4 h-4 text-teal-500" /> Creator
         </h2>
         <p className="text-sm text-slate-600 dark:text-slate-300">
-          Created by <span className="font-semibold text-slate-900 dark:text-slate-100">Lewis</span> (GitHub:
+          Created by <span className="font-semibold text-slate-900 dark:text-slate-100">scmlewis</span> (GitHub:
           <a
             href="https://github.com/scmlewis"
             target="_blank"
